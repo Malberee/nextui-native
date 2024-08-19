@@ -4,7 +4,7 @@ import { tv } from '../utils/tv'
 
 const spinner = tv({
   slots: {
-    base: 'relative flex-row items-center justify-center gap-2',
+    base: 'relative flex-col items-center justify-center gap-2',
     wrapper: 'relative flex',
     circle1: ['absolute', 'w-full', 'h-full', 'animate-spinner-ease-spin'],
     circle2: [

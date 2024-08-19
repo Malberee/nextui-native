@@ -1,12 +1,13 @@
+import { Spinner } from '@malberee/nextui-native'
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 
 import '../global.css'
 
 const App = () => {
   return (
     <View className="bg-background dark" style={styles.container}>
-      <Text>Test</Text>
+      <Spinner label="Loading" />
     </View>
   )
 }
