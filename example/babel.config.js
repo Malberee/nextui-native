@@ -5,7 +5,10 @@ module.exports = function (api) {
   api.cache(true)
 
   return {
-    presets: ['babel-preset-expo'],
+    presets: [
+      ['babel-preset-expo', { jsxImportSource: 'nativewind' }],
+      'nativewind/babel',
+    ],
     plugins: [
       [
         'module-resolver',
@@ -14,10 +17,11 @@ module.exports = function (api) {
           alias: {
             // For development, we want to alias the library to the source
             [pak.name]: path.join(__dirname, '..', pak.source),
+            '@': path.join(__dirname, '../src'),
           },
         },
       ],
-      'nativewind/babel',
+      'react-native-reanimated/plugin',
     ],
   }
 }

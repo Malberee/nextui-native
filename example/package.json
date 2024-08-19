@@ -11,18 +11,20 @@
   "dependencies": {
     "expo": "~51.0.10",
     "expo-status-bar": "~1.12.1",
-    "nativewind": "^2.0.11",
+    "nativewind": "^4.0.36",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.74.1",
+    "react-native-reanimated": "~3.10.1",
+    "react-native-svg": "^15.2.0",
     "react-native-web": "~0.19.10"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0",
-    "@expo/webpack-config": "^18.0.1",
+    "@babel/core": "^7.24.0",
+    "@expo/webpack-config": "~18.1.4",
     "babel-loader": "^8.1.0",
-    "babel-plugin-module-resolver": "^5.0.0",
-    "tailwindcss": "3.3.2"
+    "babel-plugin-module-resolver": "^5.0.2",
+    "tailwindcss": "3.4.7"
   },
   "private": true
 }

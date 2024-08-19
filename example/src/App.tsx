@@ -1,18 +1,12 @@
-import { multiply } from 'nextui-native'
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
-export default function App() {
-  const [result, setResult] = React.useState<number | undefined>()
+import '../global.css'
 
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult)
-  }, [])
-
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text className="scale-0 text-blue-400">Result: {result}</Text>
-      <Text>text</Text>
+    <View className="bg-background dark" style={styles.container}>
+      <Text>Test</Text>
     </View>
   )
 }
@@ -23,9 +17,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
-  },
 })
+
+export default App

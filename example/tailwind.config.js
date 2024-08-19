@@ -1,12 +1,10 @@
+const { nextui } = require('../src/core/theme')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './src/**/*.{js,jsx,ts,tsx}',
-    '../src/**/*.{js,jsx,ts,tsx}',
-    './App.{js,jsx,ts,tsx}',
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
+  content: ['./src/**/*.{js,jsx,ts,tsx}', '../src/**/*.{js,jsx,ts,tsx}'],
+  theme: {},
+  darkMode: 'class',
+  presets: [require('nativewind/preset')],
+  plugins: [nextui()],
 }

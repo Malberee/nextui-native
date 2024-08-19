@@ -3,6 +3,7 @@ const escape = require('escape-string-regexp')
 const { getDefaultConfig } = require('@expo/metro-config')
 const exclusionList = require('metro-config/src/defaults/exclusionList')
 const pak = require('../package.json')
+const { withNativeWind } = require('nativewind/metro')
 
 const root = path.resolve(__dirname, '..')
 const modules = Object.keys({ ...pak.peerDependencies })
@@ -25,6 +26,7 @@ const config = {
   // So we block them at the root, and alias them to the versions in example's node_modules
   resolver: {
     ...defaultConfig.resolver,
+    disableHierarchicalLookup: true,
 
     blacklistRE: exclusionList(
       modules.map(
@@ -40,4 +42,6 @@ const config = {
   },
 }
 
-module.exports = config
+module.exports = withNativeWind(config, {
+  input: './global.css',
+})
