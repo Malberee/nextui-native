@@ -1,5 +1,5 @@
 import { mapPropsVariants } from '@/core/system-rsc'
-import { chip } from '@/core/theme/components/chip'
+import { chip } from '@/core/theme'
 import { objectToDeps } from '@/utilities'
 import clsx from 'clsx'
 import { type ReactNode, cloneElement, isValidElement, useMemo } from 'react'

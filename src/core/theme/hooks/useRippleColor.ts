@@ -1,8 +1,4 @@
-import {
-  type ThemeColors,
-  commonColors,
-  semanticColors,
-} from '@/core/theme/colors'
+import { type ThemeColors, commonColors, semanticColors } from '@/core/theme'
 import type { Variant } from '@/types'
 import { useColorScheme } from 'nativewind'
 

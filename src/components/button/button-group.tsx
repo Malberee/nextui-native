@@ -1,4 +1,4 @@
-import { cn } from '@/core/theme/utils/cn'
+import { cn } from '@/core/theme'
 import React, { type FC } from 'react'
 import { View } from 'react-native'
 
