@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { Path, Svg, type SvgProps } from 'react-native-svg'
 
-export const CloseFilledIcon = (props: SvgProps) => {
+export const CloseFilledIcon = forwardRef((props: SvgProps, _) => {
   return (
     <Svg viewBox="0 0 24 24" width="16" height="16" color="white" {...props}>
       <Path
@@ -10,4 +10,4 @@ export const CloseFilledIcon = (props: SvgProps) => {
       />
     </Svg>
   )
-}
+})
