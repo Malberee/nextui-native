@@ -3148,6 +3148,7 @@ __metadata:
     lodash.kebabcase: ^4.1.1
     lodash.mapkeys: ^4.6.0
     lodash.omit: ^4.5.0
+    merge-props: ^6.0.0
     nativewind: 4.x.x
     prettier: ^3.0.3
     prettier-plugin-tailwindcss: ^0.6.1
@@ -12942,6 +12943,13 @@ __metadata:
   version: 1.0.1
   resolution: "merge-descriptors@npm:1.0.1"
   checksum: 5abc259d2ae25bb06d19ce2b94a21632583c74e2a9109ee1ba7fd147aa7362b380d971e0251069f8b3eb7d48c21ac839e21fa177b335e82c76ec172e30c31a26
+  languageName: node
+  linkType: hard
+
+"merge-props@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "merge-props@npm:6.0.0"
+  checksum: ed035b24328d824deebcc07d067175fdcc1d7e13b8d8a2ac0bee229b65122cb109e919682da2ad4ec8681996909ba554a8d237c2d6b22cdfc81813f8b6b148f7
   languageName: node
   linkType: hard
 

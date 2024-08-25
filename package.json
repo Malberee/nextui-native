@@ -63,6 +63,7 @@
     "lodash.kebabcase": "^4.1.1",
     "lodash.mapkeys": "^4.6.0",
     "lodash.omit": "^4.5.0",
+    "merge-props": "^6.0.0",
     "nativewind": "4.x.x",
     "react-native-reanimated": "~3.10.1",
     "react-native-svg": "^15.2.0",
