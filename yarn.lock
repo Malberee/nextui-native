@@ -3118,6 +3118,7 @@ __metadata:
     "@commitlint/config-conventional": ^17.0.2
     "@evilmartians/lefthook": ^1.5.0
     "@react-aria/utils": ^3.25.2
+    "@react-native-aria/button": ^0.2.7
     "@react-native-aria/switch": ^0.2.4
     "@react-native/eslint-config": ^0.73.1
     "@react-stately/toggle": ^3.7.7
@@ -3151,7 +3152,6 @@ __metadata:
     lodash.kebabcase: ^4.1.1
     lodash.mapkeys: ^4.6.0
     lodash.omit: ^4.5.0
-    merge-props: ^6.0.0
     nativewind: 4.x.x
     prettier: ^3.0.3
     prettier-plugin-tailwindcss: ^0.6.1
@@ -3502,6 +3502,21 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0
   checksum: 5866f843b852c09c0d69e082aa6120389766686607d1c67ca35c4afc4225ea4c5c426a7fb5a5ca926a0046f5c4dc2f9eebce2ffad16088730ca4b0cf49d609f7
+  languageName: node
+  linkType: hard
+
+"@react-native-aria/button@npm:^0.2.7":
+  version: 0.2.7
+  resolution: "@react-native-aria/button@npm:0.2.7"
+  dependencies:
+    "@react-aria/utils": ^3.6.0
+    "@react-native-aria/interactions": 0.2.13
+    "@react-stately/toggle": ^3.2.1
+    "@react-types/checkbox": ^3.2.1
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 198dbd404b0efec7303a32818ffa3296e2441a1742ccee0d4eb1bfb567caa6dc3ca62f96ea743ad726988755d498dd34af010bda8f054932b9858dda93037162
   languageName: node
   linkType: hard
 
@@ -13157,13 +13172,6 @@ __metadata:
   version: 1.0.1
   resolution: "merge-descriptors@npm:1.0.1"
   checksum: 5abc259d2ae25bb06d19ce2b94a21632583c74e2a9109ee1ba7fd147aa7362b380d971e0251069f8b3eb7d48c21ac839e21fa177b335e82c76ec172e30c31a26
-  languageName: node
-  linkType: hard
-
-"merge-props@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "merge-props@npm:6.0.0"
-  checksum: ed035b24328d824deebcc07d067175fdcc1d7e13b8d8a2ac0bee229b65122cb109e919682da2ad4ec8681996909ba554a8d237c2d6b22cdfc81813f8b6b148f7
   languageName: node
   linkType: hard
 

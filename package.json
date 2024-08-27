@@ -54,6 +54,7 @@
   },
   "dependencies": {
     "@react-aria/utils": "^3.25.2",
+    "@react-native-aria/button": "^0.2.7",
     "@react-native-aria/switch": "^0.2.4",
     "@react-stately/toggle": "^3.7.7",
     "clsx": "^2.1.1",
@@ -66,7 +67,6 @@
     "lodash.kebabcase": "^4.1.1",
     "lodash.mapkeys": "^4.6.0",
     "lodash.omit": "^4.5.0",
-    "merge-props": "^6.0.0",
     "nativewind": "4.x.x",
     "react-native-reanimated": "~3.10.1",
     "react-native-svg": "^15.2.0",

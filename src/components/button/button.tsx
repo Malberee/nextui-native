@@ -26,23 +26,13 @@ const Button = forwardRef<View, ButtonProps>((props, ref) => {
     ),
     spinnerPlacement,
     isIconOnly,
-    isDisabled,
     disableRipple,
-    onPress,
     getRippleProps,
-    onLayout,
-    ...otherProps
-  } = useButton(props)
+    getButtonProps,
+  } = useButton({ ...props, ref })
 
   return (
-    <Pressable
-      ref={ref}
-      onPress={onPress}
-      onLayout={onLayout}
-      disabled={isDisabled || isLoading}
-      className={slots.base({ class: classNames?.base })}
-      {...otherProps}
-    >
+    <Pressable {...getButtonProps()}>
       {startContent}
       {isLoading && spinnerPlacement === 'start' && spinner}
       {isLoading && isIconOnly ? null : (
