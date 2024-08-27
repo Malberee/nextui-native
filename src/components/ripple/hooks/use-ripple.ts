@@ -4,12 +4,14 @@ import type { GestureResponderEvent } from 'react-native'
 
 import type { RippleType } from '../ripple.types'
 
-export const useRipple = (size: number) => {
+export const useRipple = (parentWidth: number, parentHeight: number) => {
   const [ripples, setRipples] = useState<RippleType[]>([])
 
+  const size = Math.max(parentWidth, parentHeight)
+
   const onPress = (event: GestureResponderEvent) => {
-    const x = event.nativeEvent.locationX
-    const y = event.nativeEvent.locationY
+    const x = event.nativeEvent.locationX ?? parentWidth / 2
+    const y = event.nativeEvent.locationY ?? parentHeight / 2
 
     setRipples((prevRipples) => [
       ...prevRipples,
