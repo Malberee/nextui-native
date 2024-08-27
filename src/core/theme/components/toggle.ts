@@ -93,7 +93,7 @@ const toggle = tv({
         endContent: 'duration-250 transition-transform',
       },
     },
-    isSelected: {
+    isChecked: {
       true: {
         startContent: 'scale-100',
         endContent: 'translate-x-6',
@@ -107,23 +107,23 @@ const toggle = tv({
     color: 'primary',
     size: 'md',
     isDisabled: false,
-    isSelected: false,
+    isChecked: false,
     disableAnimation: false,
   },
   compoundVariants: [
     {
       size: 'sm',
-      isSelected: true,
+      isChecked: true,
       class: { thumb: 'ml-4' },
     },
     {
       size: 'md',
-      isSelected: true,
+      isChecked: true,
       class: { thumb: 'ml-5' },
     },
     {
       size: 'lg',
-      isSelected: true,
+      isChecked: true,
       class: { thumb: 'ml-6' },
     },
 
@@ -146,19 +146,19 @@ const toggle = tv({
     {
       size: 'sm',
       disableAnimation: false,
-      isSelected: true,
+      isChecked: true,
       class: { thumb: 'group-active:ml-3' },
     },
     {
       size: 'md',
       disableAnimation: false,
-      isSelected: true,
+      isChecked: true,
       class: { thumb: 'group-active:ml-4' },
     },
     {
       size: 'lg',
       disableAnimation: false,
-      isSelected: true,
+      isChecked: true,
       class: { thumb: 'group-active:ml-5' },
     },
   ],

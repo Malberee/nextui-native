@@ -2,10 +2,14 @@ import { useProviderContext } from '@/core'
 import { type PropGetter, mapPropsVariants } from '@/core/system-rsc'
 import { toggle } from '@/core/theme'
 import { objectToDeps } from '@/utilities'
+import { mergeProps, mergeRefs } from '@react-aria/utils'
+import { useSwitch as useAriaSwitch } from '@react-native-aria/switch'
+import { useToggleState } from '@react-stately/toggle'
 import clsx from 'clsx'
-import { useEffect, useMemo, useState } from 'react'
+import { type RefObject, useCallback, useId, useMemo, useRef } from 'react'
+import type { PressableProps, View } from 'react-native'
 
-import type { UseSwitchProps } from '../switch.types'
+import type { SwitchThumbIconProps, UseSwitchProps } from '../switch.types'
 
 export const useSwitch = (originalProps: UseSwitchProps = {}) => {
   const globalContext = useProviderContext()
@@ -16,11 +20,13 @@ export const useSwitch = (originalProps: UseSwitchProps = {}) => {
   )
 
   const {
-    value: valueProp,
+    ref,
+    children,
+    isReadOnly: isReadOnlyProp = false,
     startContent,
     endContent,
     defaultSelected,
-    children,
+    isSelected: isSelectedProp,
     thumbIcon,
     className,
     classNames,
@@ -28,40 +34,150 @@ export const useSwitch = (originalProps: UseSwitchProps = {}) => {
     ...otherProps
   } = props
 
+  const inputRef = useRef<View>(null)
+
   const disableAnimation =
     originalProps.disableAnimation ?? globalContext?.disableAnimation ?? false
 
-  const [isSelected, setIsSelected] = useState(!!defaultSelected)
+  const labelId = useId()
 
-  const value = valueProp ?? isSelected
+  const ariaSwitchProps = useMemo(() => {
+    const ariaLabel =
+      otherProps['aria-label'] || typeof children === 'string'
+        ? (children as string)
+        : undefined
 
-  useEffect(() => {
-    if (onValueChange) {
-      onValueChange(isSelected)
+    return {
+      children,
+      defaultSelected,
+      'isSelected': isSelectedProp,
+      'isDisabled': !!originalProps.isDisabled,
+      'isReadOnly': isReadOnlyProp,
+      'aria-label': ariaLabel,
+      'aria-labelledby': otherProps['aria-labelledby'] || labelId,
+      'onChange': onValueChange,
     }
-  }, [isSelected])
+  }, [
+    labelId,
+    children,
+    isReadOnlyProp,
+    isSelectedProp,
+    defaultSelected,
+    originalProps.isDisabled,
+    otherProps['aria-label'],
+    otherProps['aria-labelledby'],
+    onValueChange,
+  ])
+
+  const state = useToggleState(ariaSwitchProps)
+
+  const { inputProps } = useAriaSwitch(
+    ariaSwitchProps,
+    state,
+    ref as RefObject<HTMLInputElement>
+  )
+
+  const isSelected = inputProps.checked
+  const isDisabled = inputProps.disabled
 
   const slots = useMemo(
-    () => toggle({ ...variantProps, isSelected: value }),
-    [objectToDeps(variantProps), value, disableAnimation]
+    () => toggle({ ...variantProps, disableAnimation, isChecked: isSelected }),
+    [objectToDeps(variantProps), disableAnimation, isSelected]
   )
 
   const baseStyles = clsx(classNames?.base, className)
 
-  const getBaseProps: PropGetter = (props) => ({
-    className: slots.base({ class: clsx(baseStyles, props?.className) }),
-    onPress: () => setIsSelected((prevState) => !prevState),
+  const getBaseProps: PropGetter<Record<string, unknown>, PressableProps> = (
+    props
+  ) => ({
+    ...mergeProps(inputProps, otherProps, props),
+    'ref': mergeRefs(inputRef, ref),
+    'disabled': isDisabled || isReadOnlyProp,
+    'className': slots.base({ class: clsx(baseStyles, props?.className) }),
+    'aria-selected': isSelected,
+    'aria-disabled': isDisabled || isReadOnlyProp,
   })
 
+  const getWrapperProps: PropGetter = useCallback(
+    (props = {}) => ({
+      ...props,
+      className: clsx(
+        slots.wrapper({ class: clsx(classNames?.wrapper, props?.className) })
+      ),
+    }),
+    [slots, classNames?.wrapper]
+  )
+
+  const getThumbProps: PropGetter = useCallback(
+    (props) => ({
+      ...props,
+      className: slots.thumb({
+        class: clsx(classNames?.thumb, props?.className),
+      }),
+    }),
+    [slots, classNames?.thumb]
+  )
+
+  const getLabelProps: PropGetter = useCallback(
+    (props = {}) => ({
+      ...props,
+      id: labelId,
+      className: slots.label({
+        class: clsx(classNames?.label, props?.className),
+      }),
+    }),
+    [slots, classNames?.label, isDisabled, isSelected]
+  )
+
+  const getThumbIconProps = useCallback(
+    (props = { includeStateProps: false }) =>
+      mergeProps(
+        {
+          className: slots.thumbIcon({
+            class: clsx(classNames?.thumbIcon, 'size-1'),
+          }),
+        },
+        props.includeStateProps ? { isSelected: isSelected } : {}
+      ) as unknown as SwitchThumbIconProps,
+    [slots, classNames?.thumbIcon, isSelected]
+  )
+
+  const getStartContentProps = useCallback<PropGetter>(
+    (props = {}) => ({
+      ...props,
+      className: slots.startContent({
+        class: clsx(classNames?.endContent, props?.className, 'size-1'),
+      }),
+    }),
+    [slots, classNames?.startContent, isSelected]
+  )
+
+  const getEndContentProps = useCallback<PropGetter>(
+    (props = {}) => ({
+      ...props,
+      className: slots.endContent({
+        class: clsx(classNames?.endContent, props?.className, 'size-1'),
+      }),
+    }),
+    [slots, classNames?.endContent, isSelected]
+  )
+
   return {
-    children,
     slots,
     classNames,
+    ref,
+    children,
     thumbIcon,
     startContent,
     endContent,
     isSelected,
+    isDisabled,
     getBaseProps,
-    ...otherProps,
+    getWrapperProps,
+    getLabelProps,
+    getThumbProps,
+    getThumbIconProps,
+    getStartContentProps,
+    getEndContentProps,
   }
 }

@@ -11,46 +11,35 @@ const Switch = forwardRef<View, SwitchProps>((props, ref) => {
     endContent,
     thumbIcon,
     getBaseProps,
-    slots,
-    classNames,
-  } = useSwitch(props)
+    getWrapperProps,
+    getLabelProps,
+    getThumbProps,
+    getThumbIconProps,
+    getStartContentProps,
+    getEndContentProps,
+  } = useSwitch({ ...props, ref })
 
   const clonedThumbIcon =
     typeof thumbIcon === 'function'
-      ? thumbIcon({
-          className: slots.thumbIcon({ class: classNames?.thumbIcon }),
-        })
+      ? thumbIcon(getThumbIconProps({ includeStateProps: true }))
       : thumbIcon &&
-        cloneElement(thumbIcon as ReactElement, {
-          className: slots.thumbIcon({ class: classNames?.thumbIcon }),
-        })
+        cloneElement(thumbIcon as ReactElement, getThumbIconProps())
 
   const clonedStartContent =
     startContent &&
-    cloneElement(startContent as ReactElement, {
-      className: slots.startContent({ class: classNames?.startContent }),
-    })
+    cloneElement(startContent as ReactElement, getStartContentProps())
 
   const clonedEndContent =
-    endContent &&
-    cloneElement(endContent as ReactElement, {
-      className: slots.endContent({ class: classNames?.endContent }),
-    })
+    endContent && cloneElement(endContent as ReactElement, getEndContentProps())
 
   return (
-    <Pressable {...getBaseProps()} ref={ref}>
-      <View className={slots.wrapper({ class: classNames?.wrapper })}>
+    <Pressable {...getBaseProps()}>
+      <View {...getWrapperProps()}>
         {startContent && clonedStartContent}
-        <View className={slots.thumb({ class: classNames?.thumb })}>
-          {thumbIcon && clonedThumbIcon}
-        </View>
+        <View {...getThumbProps()}>{thumbIcon && clonedThumbIcon}</View>
         {endContent && clonedEndContent}
       </View>
-      {children && (
-        <Text className={slots.label({ class: classNames?.label })}>
-          {children}
-        </Text>
-      )}
+      {children && <Text {...getLabelProps()}>{children}</Text>}
     </Pressable>
   )
 })

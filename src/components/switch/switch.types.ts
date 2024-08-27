@@ -1,20 +1,22 @@
+import type { RNNextUIProps } from '@/core/system-rsc'
 import type {
   SlotsToClasses,
   ToggleSlots,
   ToggleVariantProps,
 } from '@/core/theme'
 import type { ReactNode, Ref } from 'react'
-import type { PressableProps } from 'react-native'
+import type { View } from 'react-native'
 
 export type SwitchThumbIconProps = {
   isSelected?: boolean
   className?: string
 }
 
-interface Props extends PressableProps {
-  ref?: Ref<PressableProps>
-  value?: boolean
+interface Props extends RNNextUIProps {
+  ref?: Ref<View>
+  isSelected?: boolean
   defaultSelected?: boolean
+  isReadOnly?: boolean
   children?: ReactNode
   isDisabled?: boolean
   thumbIcon?: ReactNode | ((props: SwitchThumbIconProps) => ReactNode)

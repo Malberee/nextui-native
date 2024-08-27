@@ -53,6 +53,9 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
+    "@react-aria/utils": "^3.25.2",
+    "@react-native-aria/switch": "^0.2.4",
+    "@react-stately/toggle": "^3.7.7",
     "clsx": "^2.1.1",
     "color": "^4.2.3",
     "color2k": "^2.0.3",
