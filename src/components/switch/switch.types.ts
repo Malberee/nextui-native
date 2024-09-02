@@ -1,5 +1,6 @@
 import type { RNNextUIProps } from '@/core/system-rsc'
 import type {
+  CheckboxVariantProps,
   SlotsToClasses,
   ToggleSlots,
   ToggleVariantProps,
@@ -12,7 +13,7 @@ export type SwitchThumbIconProps = {
   className?: string
 }
 
-interface Props extends RNNextUIProps {
+interface Props extends Omit<RNNextUIProps, keyof CheckboxVariantProps> {
   ref?: Ref<View>
   isSelected?: boolean
   defaultSelected?: boolean

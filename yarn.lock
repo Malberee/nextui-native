@@ -1821,6 +1821,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.6.2":
+  version: 7.25.4
+  resolution: "@babel/runtime@npm:7.25.4"
+  dependencies:
+    regenerator-runtime: ^0.14.0
+  checksum: 5c2aab03788e77f1f959d7e6ce714c299adfc9b14fb6295c2a17eb7cad0dd9c2ebfb2d25265f507f68c43d5055c5cd6f71df02feb6502cea44b68432d78bcbbe
+  languageName: node
+  linkType: hard
+
 "@babel/template@npm:^7.0.0, @babel/template@npm:^7.24.7, @babel/template@npm:^7.3.3":
   version: 7.24.7
   resolution: "@babel/template@npm:7.24.7"
@@ -3119,9 +3128,11 @@ __metadata:
     "@evilmartians/lefthook": ^1.5.0
     "@react-aria/utils": ^3.25.2
     "@react-native-aria/button": ^0.2.7
+    "@react-native-aria/checkbox": ^0.2.9
     "@react-native-aria/switch": ^0.2.4
     "@react-native/eslint-config": ^0.73.1
     "@react-stately/toggle": ^3.7.7
+    "@react-types/checkbox": ^3.8.3
     "@release-it/conventional-changelog": ^5.0.0
     "@testing-library/react-native": ^12.5.3
     "@trivago/prettier-plugin-sort-imports": ^4.3.0
@@ -3418,6 +3429,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-aria/checkbox@npm:3.2.1":
+  version: 3.2.1
+  resolution: "@react-aria/checkbox@npm:3.2.1"
+  dependencies:
+    "@babel/runtime": ^7.6.2
+    "@react-aria/label": ^3.1.1
+    "@react-aria/toggle": ^3.1.1
+    "@react-aria/utils": ^3.3.0
+    "@react-stately/checkbox": ^3.0.1
+    "@react-stately/toggle": ^3.2.1
+    "@react-types/checkbox": ^3.2.1
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1
+  checksum: a59e5a830f6737d0090dd5bab68b452cc6360bfbe6bdc1edae21a3d3cf376a77e4ba21dbcb67de7ed382fcc8a851ee8caac3b5b921a1b229650d36414eb89c04
+  languageName: node
+  linkType: hard
+
 "@react-aria/focus@npm:^3.18.2, @react-aria/focus@npm:^3.2.3":
   version: 3.18.2
   resolution: "@react-aria/focus@npm:3.18.2"
@@ -3447,6 +3475,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-aria/label@npm:^3.1.1":
+  version: 3.7.11
+  resolution: "@react-aria/label@npm:3.7.11"
+  dependencies:
+    "@react-aria/utils": ^3.25.2
+    "@react-types/shared": ^3.24.1
+    "@swc/helpers": ^0.5.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0
+  checksum: 6774934bd769ac27a97c987a26a4af76497fdf7d88af5a0cd77ccefb67295ca1b2a9a0d0c3af954241515ac9c197a401807b65ac2c49f833c8ae6e827d03beb8
+  languageName: node
+  linkType: hard
+
 "@react-aria/ssr@npm:^3.0.1, @react-aria/ssr@npm:^3.9.5":
   version: 3.9.5
   resolution: "@react-aria/ssr@npm:3.9.5"
@@ -3473,7 +3514,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-aria/toggle@npm:^3.10.7":
+"@react-aria/toggle@npm:^3.1.1, @react-aria/toggle@npm:^3.10.7":
   version: 3.10.7
   resolution: "@react-aria/toggle@npm:3.10.7"
   dependencies:
@@ -3520,6 +3561,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-native-aria/checkbox@npm:^0.2.9":
+  version: 0.2.9
+  resolution: "@react-native-aria/checkbox@npm:0.2.9"
+  dependencies:
+    "@react-aria/checkbox": 3.2.1
+    "@react-aria/utils": ^3.6.0
+    "@react-native-aria/toggle": ^0.2.8
+    "@react-native-aria/utils": 0.2.11
+    "@react-stately/toggle": ^3.2.1
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 59252a38af13114a46ec27dbb1152430ce203f01609d561d057e77f92d49fd5adab59a245fec67b8cf636982e4376d6837fdcf272b3aa0abbaddca3a0f67ceee
+  languageName: node
+  linkType: hard
+
 "@react-native-aria/interactions@npm:0.2.13":
   version: 0.2.13
   resolution: "@react-native-aria/interactions@npm:0.2.13"
@@ -3550,7 +3607,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-native-aria/toggle@npm:^0.2.6":
+"@react-native-aria/toggle@npm:^0.2.6, @react-native-aria/toggle@npm:^0.2.8":
   version: 0.2.8
   resolution: "@react-native-aria/toggle@npm:0.2.8"
   dependencies:
@@ -3982,6 +4039,33 @@ __metadata:
     "@types/react":
       optional: true
   checksum: ef88e57e3f73c98fe22e2b0d1c8ee1c719eba65b3e58667df561b61ea23ca6c350aa47ae3762a93ed801ead67a6c4c2b4c7c32a2cd0ac3109ff1d236f2b541d0
+  languageName: node
+  linkType: hard
+
+"@react-stately/checkbox@npm:^3.0.1":
+  version: 3.6.8
+  resolution: "@react-stately/checkbox@npm:3.6.8"
+  dependencies:
+    "@react-stately/form": ^3.0.5
+    "@react-stately/utils": ^3.10.3
+    "@react-types/checkbox": ^3.8.3
+    "@react-types/shared": ^3.24.1
+    "@swc/helpers": ^0.5.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0
+  checksum: 1eae8160f8d393d8c7d4852634d87a62c4bdf3f53bb39fa9b1458d1cdb849f7d2386c8aae68a9a5d69c2916ea467e72343dfaeb839707ccbd5a45f2b8421c8b1
+  languageName: node
+  linkType: hard
+
+"@react-stately/form@npm:^3.0.5":
+  version: 3.0.5
+  resolution: "@react-stately/form@npm:3.0.5"
+  dependencies:
+    "@react-types/shared": ^3.24.1
+    "@swc/helpers": ^0.5.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0
+  checksum: 7b78d8ec2e5f4c2957e3fb5a0b12295dd30213cfdea56783a55d01ba0a54815f54a43b98e84e9fdda1a1da10d8f28e25b823a58724846eb5b571d058fcf9d295
   languageName: node
   linkType: hard
 
@@ -13762,7 +13846,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nativewind@npm:4.x.x, nativewind@npm:^4.0.36":
+"nativewind@npm:4.0.36, nativewind@npm:4.x.x":
   version: 4.0.36
   resolution: "nativewind@npm:4.0.36"
   dependencies:
@@ -13843,7 +13927,7 @@ __metadata:
     babel-plugin-module-resolver: ^5.0.2
     expo: ~51.0.10
     expo-status-bar: ~1.12.1
-    nativewind: ^4.0.36
+    nativewind: 4.0.36
     react: 18.2.0
     react-dom: 18.2.0
     react-native: 0.74.1
