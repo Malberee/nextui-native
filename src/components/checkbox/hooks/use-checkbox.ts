@@ -1,35 +1,43 @@
 import { useProviderContext } from '@/core'
 import type { PropGetter } from '@/core/system-rsc'
 import { checkbox } from '@/core/theme'
-import { safeAriaLabel } from '@/utilities'
-import { chain, mergeProps, mergeRefs } from '@react-aria/utils'
-import { useCheckbox as useAriaCheckbox } from '@react-native-aria/checkbox'
+import { safeAriaLabel, warn } from '@/utilities'
+import { mergeProps, mergeRefs } from '@react-aria/utils'
+import {
+  useCheckbox as useAriaCheckbox,
+  useCheckboxGroupItem as useAriaCheckboxGroupItem,
+} from '@react-native-aria/checkbox'
 import { useToggleState } from '@react-stately/toggle'
 import clsx from 'clsx'
 import { useCallback, useId, useMemo, useRef } from 'react'
 import type { View } from 'react-native'
 
+import { useCheckboxGroupContext } from '../checkbox-group-context'
 import type { CheckboxIconProps, UseCheckboxProps } from '../checkbox.types'
 
 export const useCheckbox = (props: UseCheckboxProps = {}) => {
   const globalContext = useProviderContext()
-  // const groupContext
-  // const isInGroup = !!groupContext
+  const groupContext = useCheckboxGroupContext()
+  const isInGroup = !!groupContext
 
   const {
     ref,
+    value = '',
     children,
     icon,
+    name,
     isRequired,
     isReadOnly: isReadOnlyProp = false,
     isSelected: isSelectedProp,
-    size,
-    color,
-    radius,
-    lineThrough,
+    size = groupContext?.size ?? 'md',
+    color = groupContext?.color ?? 'primary',
+    radius = groupContext?.radius,
+    lineThrough = groupContext?.lineThrough ?? false,
     isDisabled: isDisabledProp,
-    disableAnimation = globalContext?.disableAnimation ?? false,
-    isInvalid,
+    disableAnimation = groupContext?.disableAnimation ??
+      globalContext?.disableAnimation ??
+      false,
+    isInvalid = groupContext?.isInvalid ?? false,
     isIndeterminate = false,
     defaultSelected,
     classNames,
@@ -38,12 +46,29 @@ export const useCheckbox = (props: UseCheckboxProps = {}) => {
     ...otherProps
   } = props
 
+  if (groupContext && __DEV__) {
+    if (isSelectedProp) {
+      warn(
+        'The Checkbox.Group is being used, `isSelected` will be ignored. Use the `value` of the Checkbox.Group instead.',
+        'Checkbox'
+      )
+    }
+    if (defaultSelected) {
+      warn(
+        'The Checkbox.Group is being used, `defaultSelected` will be ignored. Use the `defaultValue` of the Checkbox.Group instead.',
+        'Checkbox'
+      )
+    }
+  }
+
   const pressableRef = useRef<View>(null)
 
   const labelId = useId()
 
   const ariaCheckboxProps = useMemo(
     () => ({
+      name,
+      value,
       children,
       defaultSelected,
       isIndeterminate,
@@ -57,6 +82,8 @@ export const useCheckbox = (props: UseCheckboxProps = {}) => {
       'onChange': onValueChange,
     }),
     [
+      value,
+      name,
       labelId,
       children,
       isInvalid,
@@ -72,13 +99,15 @@ export const useCheckbox = (props: UseCheckboxProps = {}) => {
   )
 
   const toggleState = useToggleState(ariaCheckboxProps)
-  const { isSelected, toggle } = toggleState
 
-  const { inputProps } = useAriaCheckbox(
-    { ...ariaCheckboxProps },
-    toggleState,
-    pressableRef
-  )
+  const { inputProps } = isInGroup
+    ? // eslint-disable-next-line
+      useAriaCheckboxGroupItem(
+        { ...ariaCheckboxProps },
+        groupContext.groupState,
+        pressableRef
+      ) // eslint-disable-next-line
+    : useAriaCheckbox({ ...ariaCheckboxProps }, toggleState, pressableRef)
 
   const slots = useMemo(
     () =>
@@ -90,7 +119,7 @@ export const useCheckbox = (props: UseCheckboxProps = {}) => {
         lineThrough,
         isIndeterminate,
         isDisabled: isDisabledProp,
-        isSelected,
+        isSelected: inputProps.checked,
         disableAnimation,
       }),
     [
@@ -101,23 +130,19 @@ export const useCheckbox = (props: UseCheckboxProps = {}) => {
       lineThrough,
       isIndeterminate,
       isDisabledProp,
-      isSelected,
+      inputProps.checked,
       disableAnimation,
     ]
   )
 
   const baseStyles = clsx(classNames?.base, className)
 
-  const onPress = chain(!isIndeterminate && toggle, () =>
-    onValueChange?.(!isSelected)
-  )
-
   const getBaseProps: PropGetter = useCallback(
     () => ({
       ref: mergeRefs(ref, pressableRef),
       className: slots.base({ class: baseStyles }),
       ...mergeProps(otherProps, inputProps),
-      onPress,
+      ...(isIndeterminate && { onPress: null }),
     }),
     [slots, baseStyles, isIndeterminate, isInvalid, otherProps]
   )
@@ -137,18 +162,24 @@ export const useCheckbox = (props: UseCheckboxProps = {}) => {
       id: labelId,
       className: slots.label({ class: classNames?.label }),
     }),
-    [slots, classNames?.label, isDisabledProp, isSelected, isInvalid]
+    [slots, classNames?.label, isDisabledProp, inputProps.checked, isInvalid]
   )
 
   const getIconProps = useCallback(
     () =>
       ({
-        isSelected,
+        isSelected: inputProps.checked,
         isIndeterminate,
         disableAnimation,
         className: slots.icon({ class: classNames?.icon }),
       }) as CheckboxIconProps,
-    [slots, classNames?.icon, isSelected, isIndeterminate, disableAnimation]
+    [
+      slots,
+      classNames?.icon,
+      inputProps.checked,
+      isIndeterminate,
+      disableAnimation,
+    ]
   )
 
   return {

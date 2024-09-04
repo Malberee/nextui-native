@@ -5,7 +5,7 @@ import { tv } from '../utils/tv'
 
 const checkbox = tv({
   slots: {
-    base: 'group flex-row items-center justify-start p-2',
+    base: 'group -m-2 flex-row items-center justify-start p-2',
     wrapper: [
       'border-default',
       'flex-row',
@@ -173,7 +173,38 @@ const checkbox = tv({
   ],
 })
 
+const checkboxGroup = tv({
+  slots: {
+    base: 'flex flex-col gap-2',
+    label: 'text-medium text-foreground-500',
+    wrapper: 'flex flex-col flex-wrap gap-2',
+    description: 'text-small text-foreground-400',
+    errorMessage: 'text-small text-danger',
+  },
+  variants: {
+    // isRequired
+    isInvalid: {
+      true: {
+        description: 'text-danger',
+      },
+    },
+    disableAnimation: {
+      true: {},
+      false: {
+        description:
+          'transition-colors !duration-150 motion-reduce:transition-none',
+      },
+    },
+  },
+  defaultVariants: {
+    isInvalid: false,
+    isRequired: false,
+  },
+})
+
+export type CheckboxGroupSlots = keyof ReturnType<typeof checkboxGroup>
+
 export type CheckboxVariantProps = VariantProps<typeof checkbox>
 export type CheckboxSlots = keyof ReturnType<typeof checkbox>
 
-export { checkbox }
+export { checkbox, checkboxGroup }
