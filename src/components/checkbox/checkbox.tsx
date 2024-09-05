@@ -20,7 +20,7 @@ const Checkbox = forwardRef<View, CheckboxProps>((props, ref) => {
   const {
     children,
     slots,
-    icon = <CheckboxIcon className={slots.icon()} />,
+    icon = <CheckboxIcon />,
     getBaseProps,
     getWrapperProps,
     getIconProps,
