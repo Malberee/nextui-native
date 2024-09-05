@@ -18,13 +18,16 @@ const AnimatedPolyline = Animated.createAnimatedComponent(Polyline)
 const CheckIcon = (props: Omit<CheckboxIconProps, 'isIndeterminate'>) => {
   const { isSelected, disableAnimation, ...otherProps } = props
 
-  const animatedProps = useAnimatedProps(() => ({
-    strokeDashoffset: disableAnimation
-      ? isSelected
-        ? 44
-        : 66
-      : withDelay(200, withTiming(isSelected ? 44 : 66, { duration: 250 })),
-  }))
+  const animatedProps = useAnimatedProps(
+    () => ({
+      strokeDashoffset: disableAnimation
+        ? isSelected
+          ? 44
+          : 66
+        : withDelay(200, withTiming(isSelected ? 44 : 66, { duration: 250 })),
+    }),
+    [disableAnimation, isSelected]
+  )
 
   return (
     <Svg role="presentation" viewBox="0 0 17 18" {...otherProps}>
