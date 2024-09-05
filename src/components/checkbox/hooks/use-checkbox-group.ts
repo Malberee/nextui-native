@@ -18,8 +18,7 @@ import clsx from 'clsx'
 import { useCallback, useMemo } from 'react'
 import type { View } from 'react-native'
 
-import type { CheckboxGroupProps } from '../checkbox-group'
-import type { CheckboxProps } from '../checkbox.types'
+import type { CheckboxGroupProps, CheckboxProps } from '../index'
 
 interface Props extends RNNextUIProps {
   ref?: ReactRef<View | null>

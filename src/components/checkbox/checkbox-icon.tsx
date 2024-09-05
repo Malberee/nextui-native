@@ -6,7 +6,7 @@ import Animated, {
 } from 'react-native-reanimated'
 import { Line, Polyline, Svg, type SvgProps } from 'react-native-svg'
 
-import type { UseCheckboxReturn } from './checkbox.types'
+import type { UseCheckboxReturn } from './hooks'
 
 type CheckboxIconProps = Partial<
   ReturnType<UseCheckboxReturn['getIconProps']>

@@ -3,8 +3,7 @@ import React, { type ReactElement, cloneElement, forwardRef } from 'react'
 import { Pressable, Text, View } from 'react-native'
 
 import { CheckboxIcon } from './checkbox-icon'
-import type { CheckboxProps } from './checkbox.types'
-import { useCheckbox } from './hooks/use-checkbox'
+import { type UseCheckboxProps, useCheckbox } from './hooks/use-checkbox'
 
 cssInterop(CheckboxIcon, {
   className: {
@@ -14,6 +13,8 @@ cssInterop(CheckboxIcon, {
     },
   },
 })
+
+export interface CheckboxProps extends UseCheckboxProps {}
 
 const Checkbox = forwardRef<View, CheckboxProps>((props, ref) => {
   const {

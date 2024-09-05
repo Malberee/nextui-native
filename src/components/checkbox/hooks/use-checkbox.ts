@@ -1,6 +1,11 @@
 import { useProviderContext } from '@/core'
-import type { PropGetter } from '@/core/system-rsc'
-import { checkbox } from '@/core/theme'
+import type { PropGetter, RNNextUIProps } from '@/core/system-rsc'
+import {
+  type CheckboxSlots,
+  type CheckboxVariantProps,
+  type SlotsToClasses,
+  checkbox,
+} from '@/core/theme'
 import { safeAriaLabel, warn } from '@/utilities'
 import { mergeProps, mergeRefs } from '@react-aria/utils'
 import {
@@ -8,12 +13,45 @@ import {
   useCheckboxGroupItem as useAriaCheckboxGroupItem,
 } from '@react-native-aria/checkbox'
 import { useToggleState } from '@react-stately/toggle'
+import type { AriaCheckboxProps } from '@react-types/checkbox'
 import clsx from 'clsx'
-import { useCallback, useId, useMemo, useRef } from 'react'
+import {
+  type ReactNode,
+  type Ref,
+  useCallback,
+  useId,
+  useMemo,
+  useRef,
+} from 'react'
 import type { View } from 'react-native'
 
 import { useCheckboxGroupContext } from '../checkbox-group-context'
-import type { CheckboxIconProps, UseCheckboxProps } from '../checkbox.types'
+
+export type CheckboxIconProps = {
+  isSelected: boolean
+  isIndeterminate: boolean
+  disableAnimation: boolean
+  className: string
+}
+
+interface Props extends Omit<RNNextUIProps, keyof CheckboxVariantProps> {
+  ref?: Ref<View>
+  children?: ReactNode
+  isDisabled?: boolean
+  isRequired?: boolean
+  isReadOnly?: boolean
+  isSelected?: boolean
+  isIndeterminate?: boolean
+  defaultSelected?: boolean
+  icon?: ReactNode | ((props: CheckboxIconProps) => ReactNode)
+  onValueChange?: AriaCheckboxProps['onChange']
+  classNames?: SlotsToClasses<CheckboxSlots>
+  className?: string
+}
+
+export type UseCheckboxProps = Omit<Props, 'defaultChecked'> &
+  Omit<AriaCheckboxProps, keyof CheckboxVariantProps | 'onChange'> &
+  CheckboxVariantProps
 
 export const useCheckbox = (props: UseCheckboxProps = {}) => {
   const globalContext = useProviderContext()
@@ -192,3 +230,5 @@ export const useCheckbox = (props: UseCheckboxProps = {}) => {
     getIconProps,
   }
 }
+
+export type UseCheckboxReturn = ReturnType<typeof useCheckbox>
