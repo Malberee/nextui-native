@@ -147,7 +147,12 @@ export const useCheckboxGroup = (props: UseCheckboxGroupProps) => {
   )
 
   const slots = useMemo(
-    () => checkboxGroup({ isInvalid: groupState.isInvalid, disableAnimation }),
+    () =>
+      checkboxGroup({
+        isInvalid: groupState.isInvalid,
+        disableAnimation,
+        orientation,
+      }),
     [groupState.isInvalid, disableAnimation]
   )
 

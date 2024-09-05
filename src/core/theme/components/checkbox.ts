@@ -177,7 +177,7 @@ const checkboxGroup = tv({
   slots: {
     base: 'flex flex-col gap-2',
     label: 'text-medium text-foreground-500',
-    wrapper: 'flex flex-col flex-wrap gap-2',
+    wrapper: 'flex flex-wrap gap-2',
     description: 'text-small text-foreground-400',
     errorMessage: 'text-small text-danger',
   },
@@ -194,6 +194,10 @@ const checkboxGroup = tv({
         description:
           'transition-colors !duration-150 motion-reduce:transition-none',
       },
+    },
+    orientation: {
+      vertical: { wrapper: 'flex-col' },
+      horizontal: { wrapper: 'flex-row' },
     },
   },
   defaultVariants: {
