@@ -71,7 +71,7 @@ export const useCheckbox = (props: UseCheckboxProps = {}) => {
     color = groupContext?.color ?? 'primary',
     radius = groupContext?.radius,
     lineThrough = groupContext?.lineThrough ?? false,
-    isDisabled: isDisabledProp,
+    isDisabled: isDisabledProp = groupContext?.isDisabled ?? false,
     disableAnimation = groupContext?.disableAnimation ??
       globalContext?.disableAnimation ??
       false,
