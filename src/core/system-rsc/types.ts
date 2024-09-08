@@ -1,5 +1,5 @@
 import type { ComponentType } from 'react'
-import { View, type ViewProps } from 'react-native'
+import { type View, type ViewProps } from 'react-native'
 
 export type PropGetter<P = Record<string, unknown>, R = ViewProps> = (
   props?: P & ViewProps,

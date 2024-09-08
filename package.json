@@ -56,6 +56,7 @@
     "@react-aria/utils": "^3.25.2",
     "@react-native-aria/button": "^0.2.7",
     "@react-native-aria/checkbox": "^0.2.9",
+    "@react-native-aria/radio": "^0.2.10",
     "@react-native-aria/switch": "^0.2.4",
     "@react-stately/toggle": "^3.7.7",
     "@react-types/checkbox": "^3.8.3",
