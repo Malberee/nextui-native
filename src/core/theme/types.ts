@@ -85,6 +85,7 @@ export interface LayoutTheme {
    *
    */
   borderWidth?: BaseThemeUnit
+  spacing?: Record<string, string>
 }
 
 export type ConfigTheme = {

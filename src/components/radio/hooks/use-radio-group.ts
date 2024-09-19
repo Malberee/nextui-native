@@ -5,11 +5,11 @@ import {
   type SlotsToClasses,
   radioGroup,
 } from '@/core/theme'
-import { type ReactRef, safeAriaLabel } from '@/utilities'
-import { useNativeRef } from '@/utilities'
-import { useRadioGroup as useRadioGroupAria } from '@react-native-aria/radio'
-// import type { AriaRadioGroupProps } from '@react-types/radio'
-import type { RNAriaRadioGroupProps } from '@react-native-aria/radio'
+import { type ReactRef, safeAriaLabel, useNativeRef } from '@/utilities'
+import {
+  type RNAriaRadioGroupProps,
+  useRadioGroup as useRadioGroupAria,
+} from '@react-native-aria/radio'
 import { type RadioGroupState, useRadioGroupState } from '@react-stately/radio'
 import clsx from 'clsx'
 import { useCallback, useMemo } from 'react'
