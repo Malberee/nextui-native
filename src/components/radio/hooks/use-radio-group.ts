@@ -6,6 +6,7 @@ import {
   radioGroup,
 } from '@/core/theme'
 import { type ReactRef, safeAriaLabel, useNativeRef } from '@/utilities'
+import { mergeProps } from '@react-aria/utils'
 import {
   type RNAriaRadioGroupProps,
   useRadioGroup as useRadioGroupAria,
@@ -140,7 +141,7 @@ export const useRadioGroup = (props: UseRadioGroupProps) => {
     () => ({
       ref: groupRef,
       className: slots.base({ class: baseStyles }),
-      ...groupProps,
+      ...mergeProps(groupProps, otherProps),
     }),
     [groupRef, slots, baseStyles, groupProps, otherProps]
   )
