@@ -113,10 +113,12 @@ export const useSlider = (originalProps: UseSliderProps) => {
     return clampValue(valueProp)
   }, [valueProp, clampValue])
 
+  const isDisabled = originalProps?.isDisabled ?? false
+
   const state = useSliderState({
     ...otherProps,
     value: validatedValue,
-    isDisabled: originalProps?.isDisabled ?? false,
+    isDisabled,
     orientation,
     step,
     minValue,
@@ -185,11 +187,19 @@ export const useSlider = (originalProps: UseSliderProps) => {
 
   const steps = showSteps ? Math.floor((maxValue - minValue) / step) + 1 : 0
 
+  const ariaSliderProps = useMemo(
+    () => ({
+      'role': 'group',
+      'aria-disabled': isDisabled,
+    }),
+    [isDisabled]
+  )
+
   const getBaseProps: PropGetter = (props = {}) => {
     return {
       ref: baseRef,
       className: slots.base({ class: baseStyles }),
-      ...mergeProps(groupProps, otherProps, props),
+      ...mergeProps(groupProps, otherProps, props, ariaSliderProps),
     }
   }
 
@@ -223,7 +233,6 @@ export const useSlider = (originalProps: UseSliderProps) => {
 
   const getTrackProps: PropGetter = (props = {}) => {
     return {
-      ref: trackRef,
       className: slots.track({ class: classNames?.track }),
       onLayout,
       ...trackProps,
@@ -259,6 +268,9 @@ export const useSlider = (originalProps: UseSliderProps) => {
 
   const getThumbProps = (index: number) => {
     return {
+      'aria-valuemax': maxValue,
+      'aria-valuemin': minValue,
+      'aria-valuetext': numberFormatter.format(state.getThumbValue(index)),
       name,
       index,
       state,
@@ -267,7 +279,7 @@ export const useSlider = (originalProps: UseSliderProps) => {
       orientation,
       isVertical,
       renderThumb,
-      className: slots.thumb({ class: classNames?.thumb }),
+      'className': slots.thumb({ class: classNames?.thumb }),
     }
   }
 
@@ -289,15 +301,16 @@ export const useSlider = (originalProps: UseSliderProps) => {
     const percent = state.getValuePercent(mark.value)
 
     return {
-      className: slots.mark({
+      'data-slot': 'mark',
+      'className': slots.mark({
         class: classNames?.mark,
         isInRange: percent <= endOffset && percent >= startOffset,
       }),
-      style: {
+      'style': {
         [isVertical ? 'bottom' : 'left']: `${percent * 100}%`,
       },
-      onPress: (e: GestureResponderEvent) => {
-        e.stopPropagation()
+      'onPress': (e: GestureResponderEvent) => {
+        e?.stopPropagation()
 
         if (state.values.length === 1) {
           state.setThumbValue(0, percent)

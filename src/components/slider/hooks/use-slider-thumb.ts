@@ -29,7 +29,6 @@ export type UseSliderThumbProps = Props &
 
 export const useSliderThumb = (props: UseSliderThumbProps) => {
   const {
-    // ref,
     state,
     index = 0,
     name,
@@ -60,6 +59,7 @@ export const useSliderThumb = (props: UseSliderThumbProps) => {
 
   const getThumbProps: PropGetter = (props = {}) => {
     return {
+      role: 'slider',
       ref: inputRef,
       ...mergeProps(thumbProps, otherProps),
       className,
