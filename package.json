@@ -4,9 +4,26 @@
   "description": "NextUI for React Native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
-  "types": "lib/typescript/src/index.d.ts",
-  "react-native": "src/index",
   "source": "src/index",
+  "types": "lib/typescript/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "default": "./lib/module/index.js"
+      },
+      "require": {
+        "default": "./lib/commonjs/index.js"
+      }
+    },
+    "./theme": {
+      "import": {
+        "default": "./lib/module/theme.js"
+      },
+      "require": {
+        "default": "./lib/commonjs/theme.js"
+      }
+    }
+  },
   "files": [
     "src",
     "lib",
@@ -31,7 +48,7 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "clean": "del-cli lib",
-    "prepare": "bob build",
+    "prepare": "bob build && tsc-alias -p tsconfig.build.json",
     "release": "release-it"
   },
   "keywords": [
@@ -73,10 +90,9 @@
     "lodash.kebabcase": "^4.1.1",
     "lodash.mapkeys": "^4.6.0",
     "lodash.omit": "^4.5.0",
-    "nativewind": "4.0.36",
     "react-native-reanimated": "~3.10.1",
     "react-native-svg": "^15.6.0",
-    "tailwind-merge": "^1.14.0",
+    "tailwind-merge": "^2.5.2",
     "tailwind-variants": "^0.2.1"
   },
   "devDependencies": {
@@ -96,6 +112,7 @@
     "@types/react": "^18.2.44",
     "@types/react-test-renderer": "^18.3.0",
     "@typescript-eslint/typescript-estree": "^7.12.0",
+    "babel-plugin-module-resolver": "^5.0.2",
     "commitlint": "^17.0.2",
     "del-cli": "^5.1.0",
     "eslint": "^8.51.0",
@@ -108,10 +125,11 @@
     "prettier-plugin-tailwindcss": "^0.6.1",
     "react": "18.2.0",
     "react-native": "0.74.1",
-    "react-native-builder-bob": "^0.20.0",
+    "react-native-builder-bob": "^0.30.2",
     "react-test-renderer": "18.3.1",
     "release-it": "^15.0.0",
     "tailwindcss": "3.4.7",
+    "tsc-alias": "^1.8.10",
     "typescript": "5.0.4"
   },
   "resolutions": {
@@ -201,19 +219,5 @@
   "eslintIgnore": [
     "node_modules/",
     "lib/"
-  ],
-  "react-native-builder-bob": {
-    "source": "src",
-    "output": "lib",
-    "targets": [
-      "commonjs",
-      "module",
-      [
-        "typescript",
-        {
-          "project": "tsconfig.build.json"
-        }
-      ]
-    ]
-  }
+  ]
 }
