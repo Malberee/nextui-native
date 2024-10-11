@@ -150,7 +150,7 @@ const slider = tv({
     disableAnimation: {
       true: {},
       false: {
-        thumb: 'transition-all motion-reduce:transition-none',
+        thumb: 'transition-transform motion-reduce:transition-none',
         mark: 'duration-250 transition-opacity motion-reduce:transition-none',
       },
     },
