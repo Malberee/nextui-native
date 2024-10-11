@@ -13,9 +13,7 @@ const button = tv({
       'group',
       'pointer-events-box-only',
       'overflow-hidden',
-      'active:scale-[0.97]',
-      'transition-all',
-      'duration-100',
+      'opacity-100',
     ],
     content: ['transition-colors', 'duration-100'],
   },
@@ -71,6 +69,7 @@ const button = tv({
       true: { base: 'opacity-disabled pointer-events-none' },
     },
     disableAnimation: {
+      false: { base: 'transition-transform duration-100 active:scale-[0.97]' },
       true: { base: '!transition-none active:!scale-100' },
     },
     isIconOnly: {
