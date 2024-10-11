@@ -9,7 +9,6 @@ import type { UseSpinnerProps } from './spinner.types'
 cssInterop(Svg, {
   className: {
     target: 'style',
-    nativeStyleToProp: { width: true, height: true, color: 'stroke' },
   },
 })
 
@@ -38,6 +37,7 @@ const Spinner = forwardRef<View, UseSpinnerProps>((props, ref) => {
             cy="50%"
             r={R}
             strokeWidth={2}
+            stroke="currentColor"
             fill="none"
             strokeDasharray={`${CIRCLE_LENGTH * 0.25} ${CIRCLE_LENGTH * 0.75}`}
             strokeDashoffset={CIRCLE_LENGTH * 0.875}
@@ -55,8 +55,8 @@ const Spinner = forwardRef<View, UseSpinnerProps>((props, ref) => {
                 cx="50%"
                 cy="50%"
                 r={R}
-                strokeWidth={2}
                 stroke="white"
+                strokeWidth={2}
                 strokeDasharray={`${CIRCLE_LENGTH * 0.25} ${CIRCLE_LENGTH * 0.75}`}
               />
             </Mask>
@@ -66,6 +66,7 @@ const Spinner = forwardRef<View, UseSpinnerProps>((props, ref) => {
             cy="50%"
             r={R}
             strokeWidth={2}
+            stroke="currentColor"
             fill="none"
             strokeLinecap="round"
             strokeDasharray="0 4"
