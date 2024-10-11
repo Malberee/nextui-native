@@ -2,7 +2,7 @@ module.exports = {
   presets: [
     [
       'module:react-native-builder-bob/babel-preset',
-      { jsxImportSource: 'nativewind' },
+      { jsxImportSource: 'nativewind', modules: 'commonjs' },
     ],
     'nativewind/babel',
   ],
