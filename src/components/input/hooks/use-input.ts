@@ -17,7 +17,7 @@ import { useControlledState } from '@react-stately/utils'
 import type { AriaTextFieldProps } from '@react-types/textfield'
 import clsx from 'clsx'
 import type React from 'react'
-import { type Ref, useCallback, useMemo, useState } from 'react'
+import { type Ref, useCallback, useEffect, useMemo, useState } from 'react'
 import type { TextInput, TextInputProps, View } from 'react-native'
 
 import { useFormControl } from './use-form-control'
@@ -78,6 +78,12 @@ export const useInput = <T extends TextInput = TextInput>(
     originalProps.disableAnimation ?? globalContext?.disableAnimation ?? false
 
   const inputRef = useNativeRef<T & { value?: string }>(ref)
+
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.value = props.defaultValue ?? props.value ?? ''
+    }
+  }, [])
 
   const baseNativeRef = useNativeRef<View>(baseRef)
   const inputWrapperRef = useNativeRef<View>(wrapperRef)
@@ -319,7 +325,9 @@ export const useInput = <T extends TextInput = TextInput>(
     (props = {}) => {
       return {
         ...clearPressProps,
+        role: 'button',
         className: slots.clearButton({ class: classNames?.clearButton }),
+        disabled: originalProps.isDisabled,
         ...props,
       }
     },
