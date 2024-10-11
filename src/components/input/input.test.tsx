@@ -38,7 +38,7 @@ describe('Input', () => {
     render(<Input placeholder="test placeholder" isDisabled={true} />)
 
     expect(
-      screen.queryByPlaceholderText('test placeholder')?.props['disabled']
+      screen.queryByPlaceholderText('test placeholder')?.props.disabled
     ).toBe(true)
   })
 
