@@ -240,9 +240,9 @@ export const useInput = <T extends TextInput = TextInput>(
         value: inputValue,
         className: slots.input({ class: classNames?.input }),
         placeholder: originalProps.placeholder,
-        onFocus: () => setFocusWithin(true),
-        onBlur: () => setFocusWithin(false),
         ...mergeProps(inputProps, otherProps, props),
+        onFocus: chain(() => setFocusWithin(true), originalProps.onFocus),
+        onBlur: chain(() => setFocusWithin(false), originalProps.onBlur),
         onChangeText: chain(setInputValue, onValueChange, (value: string) => {
           if (inputRef.current) {
             inputRef.current.value = value
