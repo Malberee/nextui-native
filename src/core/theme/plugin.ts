@@ -206,6 +206,12 @@ const corePlugin = (
               `var(--${prefix}-line-height-large)`,
             ],
           },
+          lineHeight: {
+            tiny: `var(--${prefix}-line-height-tiny)`,
+            small: `var(--${prefix}-line-height-small)`,
+            medium: `var(--${prefix}-line-height-medium)`,
+            large: `var(--${prefix}-line-height-large)`,
+          },
           borderRadius: {
             small: `var(--${prefix}-radius-small)`,
             medium: `var(--${prefix}-radius-medium)`,

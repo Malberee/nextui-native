@@ -51,13 +51,13 @@ const slider = tv({
         thumb: 'rounded-none',
       },
       sm: {
-        thumb: 'rounded-[calc(var(--nextui-radius-small)/2)]',
+        thumb: 'rounded-[calc(theme(borderRadius.small)/2)]',
       },
       md: {
-        thumb: 'rounded-[calc(var(--nextui-radius-medium)/2)]',
+        thumb: 'rounded-[calc(theme(borderRadius.medium)/2)]',
       },
       lg: {
-        thumb: 'rounded-[calc(var(--nextui-radius-large)/1.5)]',
+        thumb: 'rounded-[calc(theme(borderRadius.large)/1.5)]',
       },
       full: {
         thumb: 'rounded-full',
@@ -219,7 +219,7 @@ const slider = tv({
       isVertical: false,
       class: {
         track:
-          'my-[calc((var(--nextui-spacing-5)-var(--nextui-spacing-1))/2)] h-1 border-x-[calc(var(--nextui-spacing-5)/2)]',
+          'my-[calc((theme(spacing.5)-theme(spacing.1))/2)] h-1 border-x-[calc(theme(spacing.5)/2)]',
       },
     },
     {
@@ -227,7 +227,7 @@ const slider = tv({
       isVertical: false,
       class: {
         track:
-          'my-[calc((var(--nextui-spacing-6)-var(--nextui-spacing-3))/2)] h-3 border-x-[calc(var(--nextui-spacing-6)/2)]',
+          'my-[calc((theme(spacing.6)-theme(spacing.3))/2)] h-3 border-x-[calc(theme(spacing.6)/2)]',
       },
     },
     {
@@ -235,7 +235,7 @@ const slider = tv({
       isVertical: false,
       class: {
         track:
-          'my-[calc((var(--nextui-spacing-7)-var(--nextui-spacing-5))/2)] h-7 border-x-[calc(var(--nextui-spacing-7)/2)]',
+          'my-[calc((theme(spacing.7)-theme(spacing.5))/2)] h-7 border-x-[calc(theme(spacing.7)/2)]',
       },
     },
     // size && isVertical
@@ -244,7 +244,7 @@ const slider = tv({
       isVertical: true,
       class: {
         track:
-          'mx-[calc((var(--nextui-spacing-5)-var(--nextui-spacing-1))/2)] w-1 border-y-[calc(var(--nextui-spacing-5)/2)]',
+          'mx-[calc((theme(spacing.5)-theme(spacing.1))/2)] w-1 border-y-[calc(theme(spacing.5)/2)]',
       },
     },
     {
@@ -252,7 +252,7 @@ const slider = tv({
       isVertical: true,
       class: {
         track:
-          'mx-[calc((var(--nextui-spacing-6)-var(--nextui-spacing-3))/2)] w-3 border-y-[calc(var(--nextui-spacing-6)/2)]',
+          'mx-[calc((theme(spacing.6)-theme(spacing.3))/2)] w-3 border-y-[calc(theme(spacing.6)/2)]',
       },
     },
     {
@@ -260,7 +260,7 @@ const slider = tv({
       isVertical: true,
       class: {
         track:
-          'mx-[calc((var(--nextui-spacing-7)-var(--nextui-spacing-5))/2)] w-7 border-y-[calc(var(--nextui-spacing-7)/2)]',
+          'mx-[calc((theme(spacing.7)-theme(spacing.5))/2)] w-7 border-y-[calc(theme(spacing.7)/2)]',
       },
     },
     // color && !isVertical && hasSingleThumb

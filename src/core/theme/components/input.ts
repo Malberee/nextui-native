@@ -21,13 +21,13 @@ const input = tv({
       'w-full',
       'flex-row',
       'items-center',
-      // 'shadow-sm',
+      'shadow-sm',
       'px-3',
       'gap-3',
     ],
     innerWrapper: 'box-border h-full grow flex-row items-center',
     input: [
-      'placeholder:text-foreground-500 h-[var(--nextui-line-height-small)] grow bg-transparent',
+      'placeholder:text-foreground-500 h-[theme(lineHeight.small)] grow bg-transparent',
       'group-[[has-start-content=true]]:pl-1.5',
       'group-[[has-end-content=true]]:pr-1.5',
     ],
@@ -99,7 +99,7 @@ const input = tv({
       sm: {
         label: 'text-tiny',
         inputWrapper: 'rounded-small h-8 min-h-8 px-2',
-        input: 'text-small h-[var(--nextui-line-height-small)]',
+        input: 'text-small h-[theme(lineHeight.small)]',
         clearButton: 'text-medium',
       },
       md: {
@@ -570,7 +570,7 @@ const input = tv({
       size: 'sm',
       class: {
         label: [
-          'group-[[filled-within=true]]:-translate-y-[calc(var(--nextui-line-height-small)/2_+_var(--nextui-font-size-tiny)/2_-_8px)]',
+          'group-[[filled-within=true]]:-translate-y-[calc(theme(lineHeight.small)/2_+_theme(fontSize.tiny)/2_-_8px)]',
         ],
       },
     },
@@ -580,7 +580,7 @@ const input = tv({
       size: 'md',
       class: {
         label: [
-          'group-[[filled-within=true]]:-translate-y-[calc(var(--nextui-line-height-small)/2_+_var(--nextui-font-size-small)/2_-_6px)]',
+          'group-[[filled-within=true]]:-translate-y-[calc(theme(lineHeight.small)/2_+_theme(fontSize.small)/2_-_6px)]',
         ],
       },
     },
@@ -591,7 +591,7 @@ const input = tv({
       class: {
         label: [
           'text-medium',
-          'group-[[filled-within=true]]:-translate-y-[calc(var(--nextui-line-height-small)/2_+_var(--nextui-font-size-small)/2_-_8px)]',
+          'group-[[filled-within=true]]:-translate-y-[calc(theme(lineHeight.small)/2_+_theme(fontSize.small)/2_-_8px)]',
         ],
       },
     },
@@ -603,7 +603,7 @@ const input = tv({
       size: 'sm',
       class: {
         label: [
-          'group-[[filled-within=true]]:-translate-y-[calc(var(--nextui-line-height-small)/2_+var(--nextui-font-size-tiny)/2_-_8px_-var(--nextui-border-width-medium))]',
+          'group-[[filled-within=true]]:-translate-y-[calc(theme(lineHeight.small)/2_+_theme(fontSize.tiny)/2_-_8px_-_theme(borderWidth.medium))]',
         ],
       },
     },
@@ -614,7 +614,7 @@ const input = tv({
       size: 'md',
       class: {
         label: [
-          'group-[[filled-within=true]]:-translate-y-[calc(var(--nextui-line-height-small)/2_+_var(--nextui-font-size-small)/2_-_6px_-_var(--nextui-border-width-medium))]',
+          'group-[[filled-within=true]]:-translate-y-[calc(theme(lineHeight.small)/2_+_theme(fontSize.small)/2_-_6px_-_theme(borderWidth.medium))]',
         ],
       },
     },
@@ -626,7 +626,7 @@ const input = tv({
       class: {
         label: [
           'text-medium',
-          'group-[[filled-within=true]]:-translate-y-[calc(var(--nextui-line-height-small)/2_+_var(--nextui-font-size-small)/2_-_8px_-_var(--nextui-border-width-medium))]',
+          'group-[[filled-within=true]]:-translate-y-[calc(theme(lineHeight.small)/2_+_theme(fontSize.small)/2_-_8px_-_theme(borderWidth.medium))]',
         ],
       },
     },
@@ -638,7 +638,7 @@ const input = tv({
       size: 'sm',
       class: {
         label: [
-          'group-[[filled-within=true]]:-translate-y-[calc(var(--nextui-line-height-small)/2_+_var(--nextui-font-size-tiny)/2_-_5px)]',
+          'group-[[filled-within=true]]:-translate-y-[calc(theme(lineHeight.small)/2_+_theme(fontSize.tiny)/2_-_5px)]',
         ],
       },
     },
@@ -649,7 +649,7 @@ const input = tv({
       size: 'md',
       class: {
         label: [
-          'group-[[filled-within=true]]:-translate-y-[calc(var(--nextui-line-height-small)/2_+_var(--nextui-font-size-small)/2_-_3.5px)]',
+          'group-[[filled-within=true]]:-translate-y-[calc(theme(lineHeight.small)/2_+_theme(fontSize.small)/2_-_3.5px)]',
         ],
       },
     },
@@ -661,7 +661,7 @@ const input = tv({
       class: {
         label: [
           'text-medium',
-          'group-[[filled-within=true]]:-translate-y-[calc(var(--nextui-line-height-small)/2_+_var(--nextui-font-size-small)/2_-_4px)]',
+          'group-[[filled-within=true]]:-translate-y-[calc(theme(lineHeight.small)/2_+_theme(fontSize.small)/2_-_4px)]',
         ],
       },
     },
@@ -674,9 +674,9 @@ const input = tv({
         label: [
           'start-2',
           'text-tiny',
-          'group-[[filled-within=true]]:-translate-y-[calc(var(--nextui-line-height-small)_-_var(--nextui-font-size-tiny)/2_+_16px)]',
+          'group-[[filled-within=true]]:-translate-y-[calc(theme(lineHeight.small)_-_theme(fontSize.tiny)/2_+_16px)]',
         ],
-        base: 'group-[[has-label=true]]:mt-[calc(var(--nextui-font-size-small)_+_8px)]',
+        base: 'group-[[has-label=true]]:mt-[calc(theme(fontSize.small)_+_8px)]',
       },
     },
     {
@@ -688,9 +688,9 @@ const input = tv({
           'start-3',
           'end-auto',
           'text-small',
-          'group-[[filled-within=true]]:-translate-y-[calc(var(--nextui-line-height-small)_-_var(--nextui-font-size-small)/2_+_20px)]',
+          'group-[[filled-within=true]]:-translate-y-[calc(theme(lineHeight.small)_-_theme(fontSize.small)/2_+_20px)]',
         ],
-        base: 'group-[[has-label=true]]:mt-[calc(var(--nextui-font-size-small)_+_10px)]',
+        base: 'group-[[has-label=true]]:mt-[calc(theme(fontSize.small)_+_10px)]',
       },
     },
     {
@@ -702,9 +702,9 @@ const input = tv({
           'start-3',
           'end-auto',
           'text-medium',
-          'group-[[filled-within=true]]:-translate-y-[calc(var(--nextui-line-height-small)_-_var(--nextui-font-size-small)/2_+_24px)]',
+          'group-[[filled-within=true]]:-translate-y-[calc(theme(lineHeight.small)_-_theme(fontSize.small)/2_+_24px)]',
         ],
-        base: 'group-[[has-label=true]]:mt-[calc(var(--nextui-font-size-small)_+_12px)]',
+        base: 'group-[[has-label=true]]:mt-[calc(theme(fontSize.small)_+_12px)]',
       },
     },
     // outside-left & size & hasHelper

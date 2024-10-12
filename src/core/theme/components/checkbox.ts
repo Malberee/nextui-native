@@ -52,27 +52,27 @@ const checkbox = tv({
       sm: {
         wrapper: [
           'mr-2 h-4 w-4',
-          'rounded-[calc(var(--nextui-radius-medium)*0.5)]',
+          'rounded-[calc(theme(borderRadius.medium)*0.5)]',
         ],
-        mark: ['h-4 w-4', 'rounded-[calc(var(--nextui-radius-medium)*0.5)]'],
+        mark: ['h-4 w-4', 'rounded-[calc(theme(borderRadius.medium)*0.5)]'],
         label: 'text-small',
         icon: 'h-2 w-3',
       },
       md: {
         wrapper: [
           'mr-2 h-5 w-5',
-          'rounded-[calc(var(--nextui-radius-medium)*0.6)]',
+          'rounded-[calc(theme(borderRadius.medium)*0.6)]',
         ],
-        mark: ['h-5 w-5', 'rounded-[calc(var(--nextui-radius-medium)*0.6)]'],
+        mark: ['h-5 w-5', 'rounded-[calc(theme(borderRadius.medium)*0.6)]'],
         label: 'text-medium',
         icon: 'h-3 w-4',
       },
       lg: {
         wrapper: [
           'mr-2 h-6 w-6',
-          'rounded-[calc(var(--nextui-radius-medium)*0.7)]',
+          'rounded-[calc(theme(borderRadius.medium)*0.7)]',
         ],
-        mark: ['h-6 w-6', 'rounded-[calc(var(--nextui-radius-medium)*0.7)]'],
+        mark: ['h-6 w-6', 'rounded-[calc(theme(borderRadius.medium)*0.7)]'],
         label: 'text-large',
         icon: 'h-4 w-5',
       },
@@ -83,16 +83,16 @@ const checkbox = tv({
         mark: 'rounded-none',
       },
       sm: {
-        wrapper: 'rounded-[calc(var(--nextui-radius-medium)*0.5)]',
-        mark: 'rounded-[calc(var(--nextui-radius-medium)*0.5)]',
+        wrapper: 'rounded-[calc(theme(borderRadius.medium)*0.5)]',
+        mark: 'rounded-[calc(theme(borderRadius.medium)*0.5)]',
       },
       md: {
-        wrapper: 'rounded-[calc(var(--nextui-radius-medium)*0.6)]',
-        mark: 'rounded-[calc(var(--nextui-radius-medium)*0.6)]',
+        wrapper: 'rounded-[calc(theme(borderRadius.medium)*0.6)]',
+        mark: 'rounded-[calc(theme(borderRadius.medium)*0.6)]',
       },
       lg: {
-        wrapper: 'rounded-[calc(var(--nextui-radius-medium)*0.7)]',
-        mark: 'rounded-[calc(var(--nextui-radius-medium)*0.7)]',
+        wrapper: 'rounded-[calc(theme(borderRadius.medium)*0.7)]',
+        mark: 'rounded-[calc(theme(borderRadius.medium)*0.7)]',
       },
       full: {
         wrapper: 'rounded-full',
