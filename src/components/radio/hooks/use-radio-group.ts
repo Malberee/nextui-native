@@ -22,6 +22,7 @@ interface Props extends RNNextUIProps {
   ref?: ReactRef<View | null>
   errorMessage?: string
   classNames?: SlotsToClasses<RadioGroupSlots>
+  className?: string
   onValueChange?: RNAriaRadioGroupProps['onChange']
 }
 

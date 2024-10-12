@@ -45,6 +45,7 @@ interface Props extends RNNextUIProps {
   startContent?: ReactNode
   endContent?: ReactNode
   classNames?: SlotsToClasses<SliderSlots>
+  className?: string
   getValue?: (value: SliderValue) => string
   renderLabel?: (props: ViewProps) => ReactNode
   renderValue?: (props: ViewProps) => ReactNode

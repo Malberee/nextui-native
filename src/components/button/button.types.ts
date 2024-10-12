@@ -24,6 +24,7 @@ export interface ButtonProps extends PressableProps {
     base?: string
     content?: string
   }
+  className?: string
 }
 
 export interface ButtonGroupProps

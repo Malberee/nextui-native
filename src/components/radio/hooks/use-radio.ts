@@ -27,6 +27,7 @@ interface Props extends RNNextUIProps {
   children?: ReactNode
   description?: string
   classNames?: SlotsToClasses<RadioSlots>
+  className?: string
 }
 
 export type UseRadioProps = Props &

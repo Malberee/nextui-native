@@ -26,6 +26,7 @@ interface Props extends RNNextUIProps {
   description?: string
   orientation?: 'vertical' | 'horizontal'
   classNames?: SlotsToClasses<CheckboxGroupSlots>
+  className?: string
   onValueChange?: AriaCheckboxGroupProps['onChange']
 }
 

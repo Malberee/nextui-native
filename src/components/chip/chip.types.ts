@@ -9,6 +9,7 @@ export interface UseChipProps extends ViewProps, ChipVariantProps {
   startContent?: ReactNode
   endContent?: ReactNode
   classNames?: SlotsToClasses<ChipSlots>
+  className?: string
   onClose?: (e: GestureResponderEvent) => void
 }
 

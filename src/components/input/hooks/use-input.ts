@@ -31,6 +31,7 @@ export interface Props<T extends TextInput = TextInput>
   startContent?: React.ReactNode
   endContent?: React.ReactNode
   classNames?: SlotsToClasses<InputSlots>
+  className?: string
   onClear?: () => void
   onValueChange?: (value: string) => void
 }
