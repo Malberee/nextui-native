@@ -8,7 +8,7 @@ import { useChip } from './hooks/use-chip'
 
 cssInterop(CloseFilledIcon, {
   className: {
-    target: 'style',
+    target: false,
     nativeStyleToProp: {
       color: true,
     },
