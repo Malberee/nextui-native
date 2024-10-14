@@ -141,24 +141,35 @@ export const useProgress = (originalProps: UseProgressProps) => {
     [slots, classNames, labelProps]
   )
 
-  const getIndicatorProps = (props = {}) => ({
-    className: slots.indicator({
-      class: clsx(
-        originalProps.isStriped && 'bg-transparent',
-        classNames?.indicator
-      ),
+  const getIndicatorProps = useCallback<PropGetter>(
+    (props = {}) => ({
+      className: slots.indicator({
+        class: clsx(
+          originalProps.isStriped && 'bg-transparent',
+          classNames?.indicator
+        ),
+      }),
+      style: isIndeterminate
+        ? indicatorAnimatedStyles
+        : {
+            transform: [
+              {
+                translateX: -width + (width / 100) * (percentage || 0),
+              },
+            ],
+          },
+      ...props,
     }),
-    style: isIndeterminate
-      ? indicatorAnimatedStyles
-      : {
-          transform: [
-            {
-              translateX: -width + (width / 100) * (percentage || 0),
-            },
-          ],
-        },
-    ...props,
-  })
+    [
+      slots,
+      classNames,
+      originalProps.isStriped,
+      isIndeterminate,
+      width,
+      percentage,
+      indicatorAnimatedStyles,
+    ]
+  )
 
   return {
     baseRef,
