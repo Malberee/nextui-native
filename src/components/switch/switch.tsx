@@ -1,8 +1,9 @@
 import React, { type ReactElement, cloneElement, forwardRef } from 'react'
 import { Pressable, Text, View } from 'react-native'
 
-import { useSwitch } from './hooks/use-switch'
-import type { SwitchProps } from './switch.types'
+import { type UseSwitchProps, useSwitch } from './hooks/use-switch'
+
+export interface SwitchProps extends UseSwitchProps {}
 
 const Switch = forwardRef<View, SwitchProps>((props, ref) => {
   const {

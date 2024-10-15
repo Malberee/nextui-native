@@ -1,15 +1,54 @@
 import { useProviderContext } from '@/core'
-import { type PropGetter, mapPropsVariants } from '@/core/system-rsc'
-import { toggle } from '@/core/theme'
+import {
+  type PropGetter,
+  type RNNextUIProps,
+  mapPropsVariants,
+} from '@/core/system-rsc'
+import {
+  type SlotsToClasses,
+  type ToggleSlots,
+  type ToggleVariantProps,
+  toggle,
+} from '@/core/theme'
 import { objectToDeps } from '@/utilities'
 import { mergeProps, mergeRefs } from '@react-aria/utils'
 import { useSwitch as useAriaSwitch } from '@react-native-aria/switch'
 import { useToggleState } from '@react-stately/toggle'
+import type { AriaSwitchProps } from '@react-types/switch'
 import clsx from 'clsx'
-import { type RefObject, useCallback, useId, useMemo, useRef } from 'react'
+import {
+  type ReactNode,
+  type Ref,
+  type RefObject,
+  useCallback,
+  useId,
+  useMemo,
+  useRef,
+} from 'react'
 import type { PressableProps, View } from 'react-native'
 
-import type { SwitchThumbIconProps, UseSwitchProps } from '../switch.types'
+export type SwitchThumbIconProps = {
+  width: string
+  height: string
+  isSelected: boolean
+  className: string
+}
+
+interface Props extends RNNextUIProps {
+  ref?: Ref<View>
+  children?: ReactNode
+  isDisabled?: boolean
+  thumbIcon?: ReactNode | ((props: SwitchThumbIconProps) => ReactNode)
+  startContent?: ReactNode
+  endContent?: ReactNode
+  classNames?: SlotsToClasses<ToggleSlots>
+  className?: string
+  onValueChange?: (value: boolean) => void
+}
+
+export type UseSwitchProps = Omit<Props, 'defaultChecked'> &
+  Omit<AriaSwitchProps, keyof ToggleVariantProps | 'onChange'> &
+  ToggleVariantProps
 
 export const useSwitch = (originalProps: UseSwitchProps = {}) => {
   const globalContext = useProviderContext()
