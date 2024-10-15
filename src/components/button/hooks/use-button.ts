@@ -1,11 +1,20 @@
 import { useRipple } from '@/components/ripple'
 import type { SpinnerProps } from '@/components/spinner/spinner.types'
 import { useProviderContext } from '@/core'
-import type { PropGetter } from '@/core/system-rsc'
-import { button } from '@/core/theme'
+import type { PropGetter, RNNextUIProps } from '@/core/system-rsc'
+import {
+  type ButtonSlots,
+  type ButtonVariantProps,
+  type SlotsToClasses,
+  button,
+} from '@/core/theme'
 import { useRippleColor } from '@/core/theme/hooks/useRippleColor'
+import type { ReactRef } from '@/utilities'
 import { chain, mergeProps } from '@react-aria/utils'
-import { useButton as useAriaButton } from '@react-native-aria/button'
+import {
+  type AriaButtonProps,
+  useButton as useAriaButton,
+} from '@react-native-aria/button'
 import {
   type ReactNode,
   cloneElement,
@@ -14,12 +23,27 @@ import {
   useMemo,
   useState,
 } from 'react'
-import type { LayoutChangeEvent } from 'react-native'
+import type { LayoutChangeEvent, View } from 'react-native'
 
 import { useButtonGroupContext } from '../button-group-context'
-import type { ButtonProps } from '../button.types'
 
-export const useButton = (props: ButtonProps) => {
+interface Props extends RNNextUIProps {
+  ref?: ReactRef<View | null>
+  disableRipple?: boolean
+  startContent?: ReactNode
+  endContent?: ReactNode
+  spinner?: ReactNode
+  spinnerPlacement?: 'start' | 'end'
+  isLoading?: boolean
+  classNames?: SlotsToClasses<ButtonSlots>
+  className?: string
+}
+
+export type UseButtonProps = Props &
+  Omit<AriaButtonProps, keyof ButtonVariantProps> &
+  Omit<ButtonVariantProps, 'isinGroup'>
+
+export const useButton = (props: UseButtonProps) => {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
   const groupContext = useButtonGroupContext()
   const globalContext = useProviderContext()

@@ -459,6 +459,8 @@ const buttonGroup = tv({
 })
 
 export type ButtonGroupVariantProps = VariantProps<typeof buttonGroup>
+
 export type ButtonVariantProps = VariantProps<typeof button>
+export type ButtonSlots = keyof ReturnType<typeof button>
 
 export { button, buttonGroup }

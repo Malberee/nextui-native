@@ -3,8 +3,9 @@ import { Pressable, Text, View } from 'react-native'
 
 import Ripple from '../ripple'
 import Spinner from '../spinner'
-import type { ButtonProps } from './button.types'
-import { useButton } from './hooks/use-button'
+import { type UseButtonProps, useButton } from './hooks'
+
+export interface ButtonProps extends UseButtonProps {}
 
 const Button = forwardRef<View, ButtonProps>((props, ref) => {
   const {

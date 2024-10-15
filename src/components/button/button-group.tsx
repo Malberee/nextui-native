@@ -1,13 +1,16 @@
 import { cn } from '@/core/theme'
-import React, { type FC } from 'react'
+import React, { type FC, type ReactElement } from 'react'
 import { View } from 'react-native'
 
+import type { ButtonProps } from './button'
 import { ButtonGroupProvider } from './button-group-context'
-import type { ButtonGroupProps } from './button.types'
-import { useButtonGroup } from './hooks/use-button-group'
+import { type UseButtonGroupProps, useButtonGroup } from './hooks'
+
+export interface ButtonGroupProps extends UseButtonGroupProps {}
 
 const ButtonGroup: FC<ButtonGroupProps> = (props) => {
-  const { children, context, classNames, ...otherProps } = useButtonGroup(props)
+  const { baseRef, children, context, classNames, getButtonGroupProps } =
+    useButtonGroup(props)
 
   const isFirstElement = (index: number) => index === 0
   const isLastElement = (index: number) =>
@@ -26,10 +29,10 @@ const ButtonGroup: FC<ButtonGroupProps> = (props) => {
 
   return (
     <ButtonGroupProvider value={context}>
-      <View className={classNames} {...otherProps}>
+      <View ref={baseRef} className={classNames} {...getButtonGroupProps()}>
         {React.Children.map(children, (child, index) => {
           if (React.isValidElement(child)) {
-            return React.cloneElement(child, {
+            return React.cloneElement(child as ReactElement<ButtonProps>, {
               classNames: {
                 base: cn(
                   getRoundedStyles(index),

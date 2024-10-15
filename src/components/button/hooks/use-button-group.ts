@@ -1,12 +1,49 @@
 import { useProviderContext } from '@/core'
-import { mapPropsVariants } from '@/core/system-rsc'
-import { buttonGroup } from '@/core/theme'
-import { objectToDeps } from '@/utilities'
-import { useMemo } from 'react'
+import {
+  type PropGetter,
+  type RNNextUIProps,
+  mapPropsVariants,
+} from '@/core/system-rsc'
+import { type ButtonGroupVariantProps, buttonGroup } from '@/core/theme'
+import { type ReactRef, objectToDeps, useNativeRef } from '@/utilities'
+import { useCallback, useMemo } from 'react'
+import type { View } from 'react-native'
 
-import type { ButtonGroupProps, ContextType } from '../button.types'
+import type { ButtonProps } from '../index'
 
-export const useButtonGroup = (originalProps: ButtonGroupProps) => {
+interface Props extends RNNextUIProps, ButtonGroupVariantProps {
+  ref?: ReactRef<View | null>
+  isDisabled?: ButtonProps['isDisabled']
+  className: string
+}
+
+export type ContextType = {
+  size?: ButtonProps['size']
+  color?: ButtonProps['color']
+  variant?: ButtonProps['variant']
+  radius?: ButtonProps['radius']
+  isDisabled?: ButtonProps['isDisabled']
+  disableAnimation?: ButtonProps['disableAnimation']
+  disableRipple?: ButtonProps['disableRipple']
+  isIconOnly?: ButtonProps['isIconOnly']
+  fullWidth?: boolean
+}
+
+export type UseButtonGroupProps = Props &
+  Partial<
+    Pick<
+      ButtonProps,
+      | 'size'
+      | 'color'
+      | 'radius'
+      | 'variant'
+      | 'isIconOnly'
+      | 'disableAnimation'
+      | 'disableRipple'
+    >
+  >
+
+export const useButtonGroup = (originalProps: UseButtonGroupProps) => {
   const globalContext = useProviderContext()
   const [props, variantProps] = mapPropsVariants(
     originalProps,
@@ -14,6 +51,8 @@ export const useButtonGroup = (originalProps: ButtonGroupProps) => {
   )
 
   const {
+    ref,
+    children,
     color = 'default',
     size = 'md',
     variant = 'solid',
@@ -25,6 +64,8 @@ export const useButtonGroup = (originalProps: ButtonGroupProps) => {
     className,
     ...otherProps
   } = props
+
+  const baseRef = useNativeRef(ref)
 
   const classNames = useMemo(
     () =>
@@ -60,9 +101,18 @@ export const useButtonGroup = (originalProps: ButtonGroupProps) => {
     ]
   )
 
+  const getButtonGroupProps: PropGetter = useCallback(() => {
+    return {
+      role: 'group',
+      ...otherProps,
+    }
+  }, [otherProps])
+
   return {
+    children,
+    baseRef,
     context,
     classNames,
-    ...otherProps,
+    getButtonGroupProps,
   }
 }
