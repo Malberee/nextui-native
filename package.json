@@ -67,7 +67,8 @@
   },
   "homepage": "https://github.com/Malberee/nextui-native#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "dependencies": {
     "@react-aria/label": "^3.7.11",
