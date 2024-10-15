@@ -5,17 +5,17 @@ NextUI for React Native
 ## Installation
 
 ```sh
-npm install nextui-native
+npm install @malberee/nextui-native
 ```
 
 ## Usage
 
 ```js
-import { multiply } from 'nextui-native';
+import { Button } from '@malberee/nextui-native';
 
 // ...
 
-const result = await multiply(3, 7);
+<Button color="success" variant="flat">Button</Button>
 ```
 
 ## Contributing
