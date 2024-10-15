@@ -115,11 +115,9 @@ export const useProgress = (originalProps: UseProgressProps) => {
 
   const getProgressBarProps = useCallback<PropGetter>(
     (props = {}) => ({
-      'ref': baseRef,
-      'data-indeterminate': isIndeterminate,
-      'data-disabled': originalProps.isDisabled,
-      'className': slots.base({ class: baseStyles }),
-      'onLayout': chain(onLayout, originalProps.onLayout),
+      ref: baseRef,
+      className: slots.base({ class: baseStyles }),
+      onLayout: chain(onLayout, originalProps.onLayout),
       ...mergeProps(progressBarProps, otherProps, props),
     }),
     [
