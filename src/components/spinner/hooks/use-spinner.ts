@@ -1,10 +1,23 @@
-import { mapPropsVariants } from '@/core/system-rsc'
-import { spinner } from '@/core/theme'
+import { type RNNextUIProps, mapPropsVariants } from '@/core/system-rsc'
+import {
+  type SlotsToClasses,
+  type SpinnerSlots,
+  type SpinnerVariantProps,
+  spinner,
+} from '@/core/theme'
 import { objectToDeps } from '@/utilities'
 import clsx from 'clsx'
-import { useMemo } from 'react'
+import { type Ref, useMemo } from 'react'
+import type { View } from 'react-native'
 
-import type { UseSpinnerProps } from '../spinner.types'
+interface Props extends RNNextUIProps {
+  ref?: Ref<View | null>
+  label?: string
+  classNames?: SlotsToClasses<SpinnerSlots>
+  className?: string
+}
+
+export type UseSpinnerProps = Props & SpinnerVariantProps
 
 export const useSpinner = (originalProps: Omit<UseSpinnerProps, 'ref'>) => {
   const [props, variantProps] = mapPropsVariants(

@@ -1,5 +1,5 @@
 import { useRipple } from '@/components/ripple'
-import type { SpinnerProps } from '@/components/spinner/spinner.types'
+import type { SpinnerProps } from '@/components/spinner'
 import { useProviderContext } from '@/core'
 import type { PropGetter, RNNextUIProps } from '@/core/system-rsc'
 import {

@@ -3,8 +3,9 @@ import React, { forwardRef } from 'react'
 import { Text, View } from 'react-native'
 import Svg, { Circle, Defs, Mask } from 'react-native-svg'
 
-import { useSpinner } from './hooks/use-spinner'
-import type { UseSpinnerProps } from './spinner.types'
+import { type UseSpinnerProps, useSpinner } from './hooks/use-spinner'
+
+export interface SpinnerProps extends UseSpinnerProps {}
 
 cssInterop(Svg, {
   className: {
@@ -12,7 +13,7 @@ cssInterop(Svg, {
   },
 })
 
-const Spinner = forwardRef<View, UseSpinnerProps>((props, ref) => {
+const Spinner = forwardRef<View, SpinnerProps>((props, ref) => {
   const { size, slots, classNames, label, getSpinnerProps } = useSpinner(props)
 
   const sizes = {

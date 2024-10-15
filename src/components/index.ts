@@ -1,5 +1,5 @@
 export * from './button'
-export { default as Spinner } from './spinner'
+export * from './spinner'
 export * from './ripple'
 export * from './chip'
 export * from './switch'
