@@ -172,10 +172,10 @@
       "tagName": "v${version}"
     },
     "npm": {
-      "publish": false
+      "publish": true
     },
     "github": {
-      "release": false
+      "release": true
     },
     "plugins": {
       "@release-it/conventional-changelog": {
