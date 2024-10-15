@@ -2,7 +2,14 @@ import { getUniqueID } from '@/utilities'
 import { type Key, useState } from 'react'
 import type { GestureResponderEvent } from 'react-native'
 
-import type { RippleType } from '../ripple.types'
+export type RippleType = {
+  key: Key
+  x: number
+  y: number
+  size: number
+}
+
+export interface UseRippleProps {}
 
 export const useRipple = (parentWidth: number, parentHeight: number) => {
   const [ripples, setRipples] = useState<RippleType[]>([])

@@ -6,7 +6,7 @@ import {
   withTiming,
 } from 'react-native-reanimated'
 
-import type { RippleType } from '../ripple.types'
+import type { RippleType } from './use-ripple'
 
 export const useRippleAnimation = (
   ripple: RippleType,

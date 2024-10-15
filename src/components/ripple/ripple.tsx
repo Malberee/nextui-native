@@ -1,7 +1,14 @@
-import React, { type FC } from 'react'
+import type { RNNextUIProps } from '@/core/system-rsc'
+import React, { type FC, type Key } from 'react'
 
+import type { RippleType } from './hooks'
 import RippleItem from './ripple-item'
-import type { RippleProps } from './ripple.types'
+
+export interface RippleProps extends RNNextUIProps {
+  ripples: RippleType[]
+  color: string
+  onClear: (key: Key) => void
+}
 
 const Ripple: FC<RippleProps> = ({ ripples, color = 'white', onClear }) => {
   return (

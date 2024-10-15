@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 import { Pressable, Text, View } from 'react-native'
 
-import Ripple from '../ripple'
+import { Ripple } from '../ripple'
 import Spinner from '../spinner'
 import { type UseButtonProps, useButton } from './hooks'
 

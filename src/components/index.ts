@@ -1,6 +1,6 @@
 export * from './button'
 export { default as Spinner } from './spinner'
-export { default as Ripple } from './ripple'
+export * from './ripple'
 export * from './chip'
 export * from './switch'
 export * from './checkbox'
