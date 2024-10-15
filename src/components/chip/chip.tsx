@@ -3,8 +3,9 @@ import { cssInterop } from 'nativewind'
 import React, { forwardRef, useMemo } from 'react'
 import { Pressable, Text, View } from 'react-native'
 
-import type { ChipProps } from './chip.types'
-import { useChip } from './hooks/use-chip'
+import { type UseChipProps, useChip } from './hooks/use-chip'
+
+export interface ChipProps extends Omit<UseChipProps, 'isOneChar'> {}
 
 cssInterop(CloseFilledIcon, {
   className: {
@@ -26,7 +27,7 @@ const Chip = forwardRef<View, ChipProps>((props, ref) => {
     endContent,
     onClose,
     getChipProps,
-  } = useChip(props)
+  } = useChip({ ...props, ref })
 
   const start = useMemo(() => {
     if (isDot && !startContent) {
@@ -57,7 +58,7 @@ const Chip = forwardRef<View, ChipProps>((props, ref) => {
   }, [slots, endContent, isCloseable])
 
   return (
-    <View ref={ref} {...getChipProps()}>
+    <View {...getChipProps()}>
       {start}
       <Text className={slots.content({ class: classNames?.content })}>
         {children}

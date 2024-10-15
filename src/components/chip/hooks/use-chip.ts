@@ -1,10 +1,23 @@
-import { mapPropsVariants } from '@/core/system-rsc'
-import { chip } from '@/core/theme'
-import { objectToDeps } from '@/utilities'
+import { type RNNextUIProps, mapPropsVariants } from '@/core/system-rsc'
+import {
+  type ChipSlots,
+  type ChipVariantProps,
+  type SlotsToClasses,
+  chip,
+} from '@/core/theme'
+import { type ReactRef, objectToDeps, useNativeRef } from '@/utilities'
 import clsx from 'clsx'
 import { type ReactNode, cloneElement, isValidElement, useMemo } from 'react'
+import type { GestureResponderEvent, View } from 'react-native'
 
-import type { UseChipProps } from '../chip.types'
+export interface UseChipProps extends RNNextUIProps, ChipVariantProps {
+  ref?: ReactRef<View | null>
+  startContent?: ReactNode
+  endContent?: ReactNode
+  classNames?: SlotsToClasses<ChipSlots>
+  className?: string
+  onClose?: (e: GestureResponderEvent) => void
+}
 
 export const useChip = (originalProps: UseChipProps) => {
   const [props, variantProps] = mapPropsVariants(
@@ -13,6 +26,7 @@ export const useChip = (originalProps: UseChipProps) => {
   )
 
   const {
+    ref,
     children,
     startContent,
     endContent,
@@ -21,6 +35,8 @@ export const useChip = (originalProps: UseChipProps) => {
     className,
     ...otherProps
   } = props
+
+  const baseRef = useNativeRef(ref)
 
   const baseStyles = clsx(classNames?.base, className)
 
@@ -57,6 +73,7 @@ export const useChip = (originalProps: UseChipProps) => {
   )
 
   const getChipProps = () => ({
+    ref: baseRef,
     className: slots.base({ class: baseStyles }),
     ...otherProps,
   })

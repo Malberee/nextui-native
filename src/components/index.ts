@@ -1,7 +1,7 @@
 export * from './button'
 export { default as Spinner } from './spinner'
 export { default as Ripple } from './ripple'
-export { default as Chip } from './chip'
+export * from './chip'
 export * from './switch'
 export * from './checkbox'
 export * from './radio'
