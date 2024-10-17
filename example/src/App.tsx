@@ -1,4 +1,4 @@
-import { Progress } from '@malberee/nextui-native'
+import { Button } from '@malberee/nextui-native'
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
 
@@ -7,11 +7,7 @@ import '../global.css'
 const App = () => {
   return (
     <View className="bg-background dark px-4" style={styles.container}>
-      <Progress
-        formatOptions={{ style: 'currency', currency: 'ARS' }}
-        value={55}
-        showValueLabel
-      />
+      <Button className="bg-red-500">Button</Button>
     </View>
   )
 }

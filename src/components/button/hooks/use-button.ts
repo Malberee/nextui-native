@@ -15,6 +15,7 @@ import {
   type AriaButtonProps,
   useButton as useAriaButton,
 } from '@react-native-aria/button'
+import clsx from 'clsx'
 import {
   type ReactNode,
   cloneElement,
@@ -128,14 +129,16 @@ export const useButton = (props: UseButtonProps) => {
     setDimensions({ width, height })
   }
 
+  const baseStyles = clsx(classNames?.base, className)
+
   const getButtonProps: PropGetter = useCallback(
     (props = {}) => ({
       ref,
-      className: slots.base({ class: classNames?.base }),
+      className: slots.base({ class: baseStyles }),
       onLayout,
       ...mergeProps(ariaButtonProps, props, otherProps),
     }),
-    [slots, classNames?.base, className, otherProps]
+    [slots, baseStyles, otherProps, ariaButtonProps]
   )
 
   const getIconClone = (icon: ReactNode) =>
