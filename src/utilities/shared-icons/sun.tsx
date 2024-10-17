@@ -1,5 +1,5 @@
 import React from 'react'
-import Svg, { Path } from 'react-native-svg'
+import Svg, { Circle, Path } from 'react-native-svg'
 
 import type { IconSvgProps } from './types'
 
@@ -20,7 +20,7 @@ export const SunIcon = (props: IconSvgProps) => (
       strokeMiterlimit={10}
       strokeWidth={32}
     />
-    <circle
+    <Circle
       cx={256}
       cy={256}
       fill="none"

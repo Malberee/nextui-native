@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Svg, { Path } from 'react-native-svg'
+import Svg, { Circle, G, Path } from 'react-native-svg'
 
 import type { IconSvgProps } from './types'
 
@@ -13,7 +13,7 @@ interface IconProps extends IconSvgProps {
 }
 
 export const Sun: React.FC<IconProps> = ({
-  fill,
+  fill = 'currentColor',
   filled,
   size,
   height,
@@ -51,7 +51,7 @@ export const Sun: React.FC<IconProps> = ({
         strokeMiterlimit={10}
         strokeWidth={32}
       />
-      <circle
+      <Circle
         cx={256}
         cy={256}
         fill="none"
@@ -66,7 +66,7 @@ export const Sun: React.FC<IconProps> = ({
 }
 
 export const Mail: React.FC<IconProps> = ({
-  fill,
+  fill = 'currentColor',
   size,
   height,
   width,
@@ -79,7 +79,7 @@ export const Mail: React.FC<IconProps> = ({
       width={size || width || 24}
       {...props}
     >
-      <g
+      <G
         fill="none"
         stroke={fill}
         strokeLinecap="round"
@@ -88,13 +88,13 @@ export const Mail: React.FC<IconProps> = ({
       >
         <Path d="M12 20.5H7c-3 0-5-1.5-5-5v-7c0-3.5 2-5 5-5h10c3 0 5 1.5 5 5v3" />
         <Path d="M17 9l-3.13 2.5a3.166 3.166 0 01-3.75 0L7 9M19.21 14.77l-3.539 3.54a1.232 1.232 0 00-.3.59l-.19 1.35a.635.635 0 00.76.76l1.35-.19a1.189 1.189 0 00.59-.3l3.54-3.54a1.365 1.365 0 000-2.22 1.361 1.361 0 00-2.211.01zM18.7 15.28a3.185 3.185 0 002.22 2.22" />
-      </g>
+      </G>
     </Svg>
   )
 }
 
 export const Moon: React.FC<IconProps> = ({
-  fill,
+  fill = 'currentColor',
   filled,
   size,
   height,
@@ -137,7 +137,7 @@ export const Moon: React.FC<IconProps> = ({
 }
 
 export const Lock: React.FC<IconProps> = ({
-  fill,
+  fill = 'currentColor',
   size,
   height,
   width,
@@ -153,7 +153,7 @@ export const Lock: React.FC<IconProps> = ({
       width={size || width || 24}
       {...props}
     >
-      <g transform="translate(3.5 2)">
+      <G transform="translate(3.5 2)">
         <Path
           d="M9.121,6.653V4.5A4.561,4.561,0,0,0,0,4.484V6.653"
           fill="none"
@@ -184,13 +184,13 @@ export const Lock: React.FC<IconProps> = ({
           strokeWidth={1.5}
           transform="translate(0.75 6.824)"
         />
-      </g>
+      </G>
     </Svg>
   )
 }
 
 export const Unlock: React.FC<IconProps> = ({
-  fill,
+  fill = 'currentColor',
   size,
   height,
   width,
@@ -206,7 +206,7 @@ export const Unlock: React.FC<IconProps> = ({
       width={size || width || 24}
       {...props}
     >
-      <g transform="translate(3.5 2)">
+      <G transform="translate(3.5 2)">
         <Path
           d="M8.927,3.237A4.562,4.562,0,0,0,0,4.484V6.653"
           fill="none"
@@ -237,13 +237,13 @@ export const Unlock: React.FC<IconProps> = ({
           strokeWidth={1.5}
           transform="translate(0.75 6.824)"
         />
-      </g>
+      </G>
     </Svg>
   )
 }
 
 export const Password: React.FC<IconProps> = ({
-  fill,
+  fill = 'currentColor',
   size,
   height,
   width,
@@ -256,16 +256,16 @@ export const Password: React.FC<IconProps> = ({
       width={size || width || 24}
       {...props}
     >
-      <g fill={fill}>
+      <G fill={fill}>
         <Path d="M18.75 8v2.1a12.984 12.984 0 00-1.5-.1V8c0-3.15-.89-5.25-5.25-5.25S6.75 4.85 6.75 8v2a12.984 12.984 0 00-1.5.1V8c0-2.9.7-6.75 6.75-6.75S18.75 5.1 18.75 8z" />
         <Path d="M18.75 10.1a12.984 12.984 0 00-1.5-.1H6.75a12.984 12.984 0 00-1.5.1C2.7 10.41 2 11.66 2 15v2c0 4 1 5 5 5h10c4 0 5-1 5-5v-2c0-3.34-.7-4.59-3.25-4.9zM8.71 16.71A1.052 1.052 0 018 17a1 1 0 01-.38-.08 1.032 1.032 0 01-.33-.21A1.052 1.052 0 017 16a1 1 0 01.08-.38 1.155 1.155 0 01.21-.33 1.032 1.032 0 01.33-.21 1 1 0 011.09.21 1.155 1.155 0 01.21.33A1 1 0 019 16a1.052 1.052 0 01-.29.71zm4.21-.33a1.155 1.155 0 01-.21.33A1.052 1.052 0 0112 17a1.033 1.033 0 01-.71-.29 1.155 1.155 0 01-.21-.33A1 1 0 0111 16a1.033 1.033 0 01.29-.71 1.047 1.047 0 011.42 0A1.033 1.033 0 0113 16a1 1 0 01-.08.38zm3.79.33a1.014 1.014 0 01-1.42 0 1.014 1.014 0 010-1.42 1.047 1.047 0 011.42 0c.04.05.08.1.12.16a.556.556 0 01.09.17.636.636 0 01.06.18 1.5 1.5 0 01.02.2 1.052 1.052 0 01-.29.71z" />
-      </g>
+      </G>
     </Svg>
   )
 }
 
 export const Notification: React.FC<IconProps> = ({
-  fill,
+  fill = 'currentColor',
   size,
   height,
   width,
@@ -290,7 +290,7 @@ export const Notification: React.FC<IconProps> = ({
 }
 
 export const User: React.FC<IconProps> = ({
-  fill,
+  fill = 'currentColor',
   size,
   height,
   width,
@@ -303,7 +303,7 @@ export const User: React.FC<IconProps> = ({
       width={size || width || 24}
       {...props}
     >
-      <g
+      <G
         fill="none"
         stroke={fill}
         strokeLinecap="round"
@@ -319,13 +319,13 @@ export const User: React.FC<IconProps> = ({
           d="M11.837 11.174a4.372 4.372 0 10-.031 0z"
           data-name="Stroke 3"
         />
-      </g>
+      </G>
     </Svg>
   )
 }
 
 export const VolumeUp: React.FC<IconProps> = ({
-  fill,
+  fill = 'currentColor',
   size,
   height,
   width,
@@ -350,7 +350,7 @@ export const VolumeUp: React.FC<IconProps> = ({
 }
 
 export const Camera: React.FC<IconProps> = ({
-  fill,
+  fill = 'currentColor',
   size,
   height,
   width,
@@ -375,7 +375,7 @@ export const Camera: React.FC<IconProps> = ({
 }
 
 export const Activity: React.FC<IconProps> = ({
-  fill,
+  fill = 'currentColor',
   size,
   height,
   width,
@@ -389,7 +389,7 @@ export const Activity: React.FC<IconProps> = ({
       width={size || width || 24}
       {...props}
     >
-      <g
+      <G
         fill="none"
         stroke={fill}
         strokeLinecap="round"
@@ -400,13 +400,13 @@ export const Activity: React.FC<IconProps> = ({
         <Path d="M6.918 14.854l2.993-3.889 3.414 2.68 2.929-3.78" />
         <Path d="M19.668 2.35a1.922 1.922 0 11-1.922 1.922 1.921 1.921 0 011.922-1.922z" />
         <Path d="M20.756 9.269a20.809 20.809 0 01.194 3.034c0 6.938-2.312 9.25-9.25 9.25s-9.25-2.312-9.25-9.25 2.313-9.25 9.25-9.25a20.931 20.931 0 012.983.187" />
-      </g>
+      </G>
     </Svg>
   )
 }
 
 export const Plus: React.FC<IconProps> = ({
-  fill,
+  fill = 'currentColor',
   size,
   height,
   width,
@@ -419,7 +419,7 @@ export const Plus: React.FC<IconProps> = ({
       width={size || width || 24}
       {...props}
     >
-      <g
+      <G
         fill="none"
         stroke={fill}
         strokeLinecap="round"
@@ -428,13 +428,13 @@ export const Plus: React.FC<IconProps> = ({
       >
         <Path d="M6 12h12" />
         <Path d="M12 18V6" />
-      </g>
+      </G>
     </Svg>
   )
 }
 
 export const Minus: React.FC<IconProps> = ({
-  fill,
+  fill = 'currentColor',
   size,
   height,
   width,
@@ -460,7 +460,7 @@ export const Minus: React.FC<IconProps> = ({
 }
 
 export const Eye: React.FC<IconProps> = ({
-  fill,
+  fill = 'currentColor',
   size,
   height,
   width,
@@ -493,7 +493,7 @@ export const Eye: React.FC<IconProps> = ({
 }
 
 export const Edit: React.FC<IconProps> = ({
-  fill,
+  fill = 'currentColor',
   size,
   height,
   width,
@@ -536,7 +536,7 @@ export const Edit: React.FC<IconProps> = ({
 }
 
 export const Delete: React.FC<IconProps> = ({
-  fill,
+  fill = 'currentColor',
   size,
   height,
   width,
@@ -590,7 +590,7 @@ export const Delete: React.FC<IconProps> = ({
 }
 
 export const ChevronDown: React.FC<IconProps> = ({
-  fill,
+  fill = 'currentColor',
   size,
   height,
   width,
@@ -617,7 +617,7 @@ export const ChevronDown: React.FC<IconProps> = ({
 }
 
 export const ChevronDownBold: React.FC<IconProps> = ({
-  fill,
+  fill = 'currentColor',
   size,
   height,
   width,
@@ -640,7 +640,7 @@ export const ChevronDownBold: React.FC<IconProps> = ({
 }
 
 export const NewFile: React.FC<IconProps> = ({
-  fill,
+  fill = 'currentColor',
   size,
   height,
   width,
@@ -714,7 +714,7 @@ export const NewFile: React.FC<IconProps> = ({
 }
 
 export const AddNoteBulk: React.FC<IconProps> = ({
-  fill,
+  fill = 'currentColor',
   size,
   height,
   width,
@@ -742,7 +742,7 @@ export const AddNoteBulk: React.FC<IconProps> = ({
 }
 
 export const CopyDocumentBulk: React.FC<IconProps> = ({
-  fill,
+  fill = 'currentColor',
   size,
   height,
   width,
@@ -774,7 +774,7 @@ export const CopyDocumentBulk: React.FC<IconProps> = ({
 }
 
 export const EditDocumentBulk: React.FC<IconProps> = ({
-  fill,
+  fill = 'currentColor',
   size,
   height,
   width,
@@ -802,7 +802,7 @@ export const EditDocumentBulk: React.FC<IconProps> = ({
 }
 
 export const DeleteDocumentBulk: React.FC<IconProps> = ({
-  fill,
+  fill = 'currentColor',
   size,
   height,
   width,
@@ -992,7 +992,7 @@ export const Scale: React.FC<IconProps> = ({
 
 export const Search: React.FC<IconProps> = ({
   size,
-  fill,
+  fill = 'currentColor',
   width = 24,
   height = 24,
   ...props
