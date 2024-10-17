@@ -1,4 +1,4 @@
-import { Button } from '@malberee/nextui-native'
+import { CalendarBoldIcon, Input } from '@malberee/nextui-native'
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
 
@@ -7,7 +7,10 @@ import '../global.css'
 const App = () => {
   return (
     <View className="bg-background dark px-4" style={styles.container}>
-      <Button className="bg-red-500">Button</Button>
+      <Input
+        color="success"
+        startContent={<CalendarBoldIcon color="white" />}
+      />
     </View>
   )
 }
