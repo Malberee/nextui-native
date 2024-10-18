@@ -15,12 +15,12 @@
         "default": "./lib/commonjs/index.js"
       }
     },
-    "./theme": {
+    "./plugin": {
       "import": {
-        "default": "./lib/module/theme.js"
+        "default": "./lib/module/plugin.js"
       },
       "require": {
-        "default": "./lib/commonjs/theme.js"
+        "default": "./lib/commonjs/plugin.js"
       }
     }
   },

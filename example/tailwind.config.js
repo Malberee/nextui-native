@@ -1,4 +1,4 @@
-const { nextui } = require('../src/core/theme')
+const { nextui } = require('../src/plugin')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
