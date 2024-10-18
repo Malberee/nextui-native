@@ -334,7 +334,7 @@ const button = tv({
       variant: 'light',
       color: 'default',
       class: {
-        base: [colorVariants.light.wrapper.default, 'active:bg-default/40'],
+        base: colorVariants.light.wrapper.default,
         content: colorVariants.light.content.default,
       },
     },
@@ -342,7 +342,7 @@ const button = tv({
       variant: 'light',
       color: 'primary',
       class: {
-        base: [colorVariants.light.wrapper.primary, 'active:bg-primary/20'],
+        base: colorVariants.light.wrapper.primary,
         content: colorVariants.light.content.primary,
       },
     },
@@ -350,7 +350,7 @@ const button = tv({
       variant: 'light',
       color: 'secondary',
       class: {
-        base: [colorVariants.light.wrapper.secondary, 'active:bg-secondary/20'],
+        base: colorVariants.light.wrapper.secondary,
         content: colorVariants.light.content.secondary,
       },
     },
@@ -358,7 +358,7 @@ const button = tv({
       variant: 'light',
       color: 'success',
       class: {
-        base: [colorVariants.light.wrapper.success, 'active:bg-success/20'],
+        base: colorVariants.light.wrapper.success,
         content: colorVariants.light.content.success,
       },
     },
@@ -366,7 +366,7 @@ const button = tv({
       variant: 'light',
       color: 'warning',
       class: {
-        base: [colorVariants.light.wrapper.warning, 'active:bg-warning/20'],
+        base: colorVariants.light.wrapper.warning,
         content: colorVariants.light.content.warning,
       },
     },
@@ -374,7 +374,7 @@ const button = tv({
       variant: 'light',
       color: 'danger',
       class: {
-        base: [colorVariants.light.wrapper.danger, 'active:bg-danger/20'],
+        base: colorVariants.light.wrapper.danger,
         content: colorVariants.light.content.danger,
       },
     },
