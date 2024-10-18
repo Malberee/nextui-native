@@ -56,7 +56,7 @@ import { Button } from '@malberee/nextui-native'
 
 // ...
 
-;<Button color="success" variant="flat">
+<Button color="success" variant="flat">
   Button
 </Button>
 ```
