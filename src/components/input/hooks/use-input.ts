@@ -23,7 +23,7 @@ import type { TextInput, TextInputProps, View } from 'react-native'
 import { useFormControl } from './use-form-control'
 
 export interface Props<T extends TextInput = TextInput>
-  extends Omit<RNNextUIProps, keyof InputVariantProps> {
+  extends Omit<RNNextUIProps<typeof TextInput>, keyof InputVariantProps> {
   ref?: Ref<T>
   baseRef?: Ref<View>
   wrapperRef?: Ref<View>

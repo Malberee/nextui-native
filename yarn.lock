@@ -3009,7 +3009,7 @@ __metadata:
     "@react-stately/toggle": ^3.7.7
     "@react-types/checkbox": ^3.8.4
     "@react-types/progress": ^3.5.7
-    "@react-types/textfield": ^3.9.6
+    "@react-types/textfield": ^3.9.7
     "@release-it/conventional-changelog": ^5.0.0
     "@testing-library/react-native": ^12.5.3
     "@trivago/prettier-plugin-sort-imports": ^4.3.0
@@ -4303,7 +4303,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-types/textfield@npm:^3.9.6":
+"@react-types/textfield@npm:^3.9.7":
   version: 3.9.7
   resolution: "@react-types/textfield@npm:3.9.7"
   dependencies:
