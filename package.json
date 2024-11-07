@@ -49,7 +49,7 @@
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "clean": "del-cli lib",
     "prepare": "bob build && tsc-alias -p tsconfig.build.json",
-    "release": "release-it"
+    "release": "dotenv release-it --"
   },
   "keywords": [
     "react-native",
