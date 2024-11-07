@@ -223,7 +223,7 @@ export const useInput = <T extends TextInput = TextInput>(
     (props = {}) => {
       return {
         className: slots.label({ class: classNames?.label }),
-        style: { transformOrigin: 'left top' },
+        style: { transformOrigin: [0, 0, 0] },
         ...props,
       }
     },
@@ -339,7 +339,7 @@ export const useInput = <T extends TextInput = TextInput>(
     (props = {}) => {
       return {
         className: slots.underline({ class: classNames?.underline }),
-        style: { transformOrigin: 'center' },
+        style: { transformOrigin: ['50%', '50%', 0] },
         ...props,
       }
     },
@@ -349,7 +349,7 @@ export const useInput = <T extends TextInput = TextInput>(
   return {
     slots,
     classNames,
-    // domRef,
+    baseRef,
     label,
     description,
     startContent,

@@ -144,7 +144,8 @@
     "nativewind": "4.x.x",
     "react": "*",
     "react-native": "*",
-    "tailwindcss": "3.x.x"
+    "tailwindcss": "3.x.x",
+    "react-native-svg": "^15.6.0"
   },
   "workspaces": [
     "example"
