@@ -36,11 +36,11 @@ const Button = forwardRef<View, ButtonProps>((props, ref) => {
     <Pressable {...getButtonProps()}>
       {startContent}
       {isLoading && spinnerPlacement === 'start' && spinner}
-      {isLoading && isIconOnly ? null : (
+      {isLoading && isIconOnly ? null : children ? (
         <Text className={slots.content({ class: classNames?.content })}>
           {children}
         </Text>
-      )}
+      ) : null}
       {isLoading && spinnerPlacement === 'end' && spinner}
       {endContent}
       {!disableRipple && <Ripple {...getRippleProps()} />}
