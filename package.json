@@ -125,7 +125,7 @@
     "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-testing-library": "^6.3.0",
     "jest": "^29.7.0",
-    "nativewind": "4.1.14",
+    "nativewind": "4.1.23",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.6.1",
     "react": "18.2.0",
