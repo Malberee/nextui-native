@@ -129,6 +129,7 @@ export const useCheckbox = (props: UseCheckboxProps = {}) => {
       isDisabledProp,
       isReadOnlyProp,
       isSelectedProp,
+      isRequired,
       defaultSelected,
       otherProps['aria-label'],
       otherProps['aria-labelledby'],
@@ -157,7 +158,6 @@ export const useCheckbox = (props: UseCheckboxProps = {}) => {
         lineThrough,
         isIndeterminate,
         isDisabled: isDisabledProp,
-        isSelected: inputProps.checked,
         disableAnimation,
       }),
     [
@@ -179,10 +179,18 @@ export const useCheckbox = (props: UseCheckboxProps = {}) => {
     () => ({
       ref: mergeRefs(ref, pressableRef),
       className: slots.base({ class: baseStyles }),
+      selected: inputProps.checked,
       ...mergeProps(otherProps, inputProps),
       ...(isIndeterminate && { onPress: null }),
     }),
-    [slots, baseStyles, isIndeterminate, isInvalid, otherProps]
+    [
+      slots,
+      baseStyles,
+      isIndeterminate,
+      isInvalid,
+      inputProps.checked,
+      otherProps,
+    ]
   )
 
   const getWrapperProps: PropGetter = useCallback(

@@ -15,7 +15,7 @@ const checkbox = tv({
       'border-solid',
       'scale-100',
     ],
-    mark: 'absolute flex-row items-center justify-center',
+    mark: 'absolute scale-50 flex-row items-center justify-center opacity-0 group-[[selected=true]]:scale-100 group-[[selected=true]]:opacity-100',
     icon: '',
     labelWrapper: 'relative flex-row items-center justify-center opacity-100',
     label: 'text-foreground relative',
@@ -138,14 +138,6 @@ const checkbox = tv({
         label:
           'duration-250 transition-colors ease-in-out motion-reduce:transition-none',
         line: 'duration-250 transition-transform ease-in-out motion-reduce:transition-none',
-      },
-    },
-    isSelected: {
-      true: {
-        mark: 'scale-100 opacity-100',
-      },
-      false: {
-        mark: 'scale-50 opacity-0',
       },
     },
     isIndeterminate: {
