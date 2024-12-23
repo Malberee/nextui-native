@@ -101,7 +101,8 @@ const checkbox = tv({
     },
     lineThrough: {
       true: {
-        line: 'bg-foreground h-0.5 w-full scale-x-0',
+        line: 'bg-foreground h-0.5 w-full scale-x-0 group-[[selected=true]]:scale-x-100 group-[[selected=true]]:opacity-60',
+        labelWrapper: 'group-[[selected=true]]:opacity-60',
       },
       false: {
         line: 'hidden',
@@ -151,18 +152,7 @@ const checkbox = tv({
     size: 'md',
     isDisabled: false,
     lineThrough: false,
-    isSelected: false,
   },
-  compoundVariants: [
-    {
-      isSelected: true,
-      lineThrough: true,
-      class: {
-        labelWrapper: 'opacity-disabled',
-        line: 'scale-x-100',
-      },
-    },
-  ],
 })
 
 const checkboxGroup = tv({
