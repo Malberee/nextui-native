@@ -1,6 +1,6 @@
 {
   "name": "@malberee/nextui-native",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "description": "NextUI for React Native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
