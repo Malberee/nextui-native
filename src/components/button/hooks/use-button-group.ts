@@ -12,7 +12,14 @@ import type { View } from 'react-native'
 import type { ButtonProps } from '../index'
 
 interface Props extends RNNextUIProps, ButtonGroupVariantProps {
+  /**
+   * Ref to the React Native component.
+   */
   ref?: ReactRef<View | null>
+  /**
+   * Whether the buttons are disabled.
+   * @default false
+   */
   isDisabled?: ButtonProps['isDisabled']
   className: string
 }

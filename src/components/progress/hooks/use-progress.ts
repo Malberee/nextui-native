@@ -27,8 +27,31 @@ import { useIndeterminateAnimation } from './use-indeterminate-animation'
 import { useProgressBar as useAriaProgress } from './use-progress-bar'
 
 interface Props extends RNNextUIProps {
+  /**
+   * Ref to the React Native component.
+   */
   ref?: ReactRef<View | null>
+  /**
+   * Whether to show the value label.
+   * @default false
+   */
   showValueLabel?: boolean
+  /**
+   * Classname or List of classes to change the classNames of the element.
+   * if `className` is passed, it will be added to the base slot.
+   *
+   * @example
+   * ```ts
+   * <Progress classNames={{
+   *    base:"base-classes",
+   *    labelWrapper: "labelWrapper-classes",
+   *    label: "label-classes",
+   *    value: "value-classes",
+   *    track: "track-classes",
+   *    indicator: "indicator-classes",
+   * }} />
+   * ```
+   */
   classNames?: SlotsToClasses<ProgressSlots>
   className?: string
 }

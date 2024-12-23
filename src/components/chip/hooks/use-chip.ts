@@ -11,11 +11,44 @@ import { type ReactNode, cloneElement, isValidElement, useMemo } from 'react'
 import type { GestureResponderEvent, View } from 'react-native'
 
 export interface UseChipProps extends RNNextUIProps, ChipVariantProps {
+  /**
+   * Ref to the React Native component.
+   */
   ref?: ReactRef<View | null>
+  /**
+   * Element to be rendered in the left side of the chip.
+   * this props overrides the `avatar` prop.
+   */
   startContent?: ReactNode
+  /**
+   * Element to be rendered in the right side of the chip.
+   * if you pass this prop and the `onClose` prop, the passed element
+   * will have the close button props and it will be rendered instead of the
+   * default close button.
+   */
   endContent?: ReactNode
+  /**
+   * Classname or List of classes to change the classNames of the element.
+   * if `className` is passed, it will be added to the base slot.
+   *
+   * @example
+   * ```ts
+   * <Chip classNames={{
+   *    base:"base-classes",
+   *    dot: "dot-classes",
+   *    content: "content-classes",
+   *    avatar: "avatar-classes",
+   *    closeButton: "close-button-classes",
+   * }} />
+   * ```
+   */
   classNames?: SlotsToClasses<ChipSlots>
   className?: string
+  /**
+   * Callback fired when the chip is closed. if you pass this prop,
+   * the chip will display a close button (endContent).
+   * @param e PressEvent
+   */
   onClose?: (e: GestureResponderEvent) => void
 }
 

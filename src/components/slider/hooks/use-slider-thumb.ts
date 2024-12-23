@@ -11,15 +11,36 @@ import { type View } from 'react-native'
 import type { UseSliderProps } from './use-slider'
 
 interface Props extends RNNextUIProps {
+  /**
+   * Ref to the React Native component.
+   */
   ref?: ReactRef<View | null>
+  /**
+   * slider state, created via `useSliderState`.
+   */
   state: SliderState
+  /**
+   * A ref to the track element.
+   */
   trackRef: RefObject<View>
+  /**
+   * @internal
+   */
   trackLayout: {
     width: number
     height: number
   }
+  /**
+   * @internal
+   */
   isVertical: boolean
+  /**
+   * @internal
+   */
   formatOptions?: Intl.NumberFormatOptions
+  /**
+   * Function to render the thumb. It can be used to add a tooltip or custom icon.
+   */
   renderThumb?: UseSliderProps['renderThumb']
 }
 

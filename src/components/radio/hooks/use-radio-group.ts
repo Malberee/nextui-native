@@ -19,10 +19,31 @@ import type { View } from 'react-native'
 import type { RadioProps } from '../radio'
 
 interface Props extends RNNextUIProps {
+  /**
+   * Ref to the React Native component.
+   */
   ref?: ReactRef<View | null>
   errorMessage?: string
+  /**
+   * Classname or List of classes to change the classNames of the element.
+   * if `className` is passed, it will be added to the base slot.
+   *
+   * @example
+   * ```ts
+   * <RadioGroup classNames={{
+   *    base:"base-classes",
+   *    label: "label-classes",
+   *    wrapper: "wrapper-classes", // radios wrapper
+   * }} >
+   *  // radios
+   * </RadioGroup>
+   * ```
+   */
   classNames?: SlotsToClasses<RadioGroupSlots>
   className?: string
+  /**
+   * React aria onChange event.
+   */
   onValueChange?: RNAriaRadioGroupProps['onChange']
 }
 

@@ -29,12 +29,39 @@ import type { LayoutChangeEvent, View } from 'react-native'
 import { useButtonGroupContext } from '../button-group-context'
 
 interface Props extends RNNextUIProps {
+  /**
+   * Ref to the React Native component.
+   */
   ref?: ReactRef<View | null>
+  /**
+   * Whether the button should display a ripple effect on press.
+   * @default false
+   */
   disableRipple?: boolean
+  /**
+   * The button start content.
+   */
   startContent?: ReactNode
+  /**
+   * Spinner to display when loading.
+   * @see https://nextui.org/components/spinner
+   */
   endContent?: ReactNode
+  /**
+   * The spinner placement.
+   * @default "start"
+   */
   spinner?: ReactNode
+  /**
+   * Whether the button should display a loading spinner.
+   * @default false
+   */
   spinnerPlacement?: 'start' | 'end'
+  /**
+   * The native button click event handler.
+   * use `onPress` instead.
+   * @deprecated
+   */
   isLoading?: boolean
   classNames?: SlotsToClasses<ButtonSlots>
   className?: string

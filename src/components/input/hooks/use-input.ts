@@ -24,15 +24,66 @@ import { useFormControl } from './use-form-control'
 
 export interface Props<T extends TextInput = TextInput>
   extends Omit<RNNextUIProps<typeof TextInput>, keyof InputVariantProps> {
+  /**
+   * Ref to the React Native component.
+   */
   ref?: Ref<T>
+  /**
+   * Ref to the container.
+   */
   baseRef?: Ref<View>
+  /**
+   * Ref to the input wrapper.
+   * This is the element that wraps the input label and the innerWrapper when the labelPlacement="inside"
+   * and the input has start/end content.
+   */
   wrapperRef?: Ref<View>
+  /**
+   * Ref to the input inner wrapper.
+   * This is the element that wraps the input and the start/end content when passed.
+   */
   innerWrapperRef?: Ref<View>
+  /**
+   * Element to be rendered in the left side of the input.
+   */
   startContent?: React.ReactNode
+  /**
+   * Element to be rendered in the right side of the input.
+   * if you pass this prop and the `onClear` prop, the passed element
+   * will have the clear button props and it will be rendered instead of the
+   * default clear button.
+   */
   endContent?: React.ReactNode
+  /**
+   * Classname or List of classes to change the classNames of the element.
+   * if `className` is passed, it will be added to the base slot.
+   *
+   * @example
+   * ```ts
+   * <Input classNames={{
+   *    base:"base-classes",
+   *    label: "label-classes",
+   *    mainWrapper: "main-wrapper-classes",
+   *    inputWrapper: "input-wrapper-classes",
+   *    innerWrapper: "inner-wrapper-classes",
+   *    input: "input-classes",
+   *    clearButton: "clear-button-classes",
+   *    helperWrapper: "helper-wrapper-classes",
+   *    description: "description-classes",
+   *    errorMessage: "error-message-classes",
+   * }} />
+   * ```
+   */
   classNames?: SlotsToClasses<InputSlots>
   className?: string
+  /**
+   * Callback fired when the value is cleared.
+   * if you pass this prop, the clear button will be shown.
+   */
   onClear?: () => void
+  /**
+   * React aria onChange event.
+   */
   onValueChange?: (value: string) => void
 }
 

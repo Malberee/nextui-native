@@ -21,12 +21,37 @@ import type { View } from 'react-native'
 import type { CheckboxGroupProps, CheckboxProps } from '../index'
 
 interface Props extends RNNextUIProps {
+  /**
+   * Ref to the React Native component.
+   */
   ref?: ReactRef<View | null>
   errorMessage?: string
   description?: string
+  /**
+   * The axis the checkbox group items should align with.
+   * @default "vertical"
+   */
   orientation?: 'vertical' | 'horizontal'
+  /**
+   * Classname or List of classes to change the classNames of the element.
+   * if `className` is passed, it will be added to the base slot.
+   *
+   * @example
+   * ```ts
+   * <CheckboxGroup classNames={{
+   *    base:"base-classes",
+   *    label: "label-classes",
+   *    wrapper: "wrapper-classes", // checkboxes wrapper
+   * }} >
+   *  // checkboxes
+   * </CheckboxGroup>
+   * ```
+   */
   classNames?: SlotsToClasses<CheckboxGroupSlots>
   className?: string
+  /**
+   * React aria onChange event.
+   */
   onValueChange?: AriaCheckboxGroupProps['onChange']
 }
 

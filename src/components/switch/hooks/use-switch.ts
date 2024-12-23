@@ -35,14 +35,51 @@ export type SwitchThumbIconProps = {
 }
 
 interface Props extends RNNextUIProps {
+  /**
+   * Ref to the React Native component.
+   */
   ref?: Ref<View>
+  /**
+   * The label of the switch.
+   */
   children?: ReactNode
+  /**
+   * Whether the switch is disabled.
+   * @default false
+   */
   isDisabled?: boolean
+  /**
+   * The icon to be displayed inside the thumb.
+   */
   thumbIcon?: ReactNode | ((props: SwitchThumbIconProps) => ReactNode)
+  /**
+   * Start icon to be displayed inside the switch.
+   */
   startContent?: ReactNode
+  /**
+   * End icon to be displayed inside the switch.
+   */
   endContent?: ReactNode
+  /**
+   * Classname or List of classes to change the classNames of the element.
+   * if `className` is passed, it will be added to the base slot.
+   *
+   * @example
+   * ```ts
+   * <Switch classNames={{
+   *    base:"base-classes",
+   *    wrapper: "wrapper-classes",
+   *    thumb: "thumb-classes",
+   *    thumbIcon: "thumbIcon-classes",
+   *    label: "label-classes",
+   * }} />
+   * ```
+   */
   classNames?: SlotsToClasses<ToggleSlots>
   className?: string
+  /**
+   * React aria onChange event.
+   */
   onValueChange?: (value: boolean) => void
 }
 

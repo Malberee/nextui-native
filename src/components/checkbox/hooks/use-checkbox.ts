@@ -35,16 +35,49 @@ export type CheckboxIconProps = {
 }
 
 interface Props extends Omit<RNNextUIProps, keyof CheckboxVariantProps> {
+  /**
+   * Ref to the React Native component.
+   */
   ref?: Ref<View>
+  /**
+   * The label of the checkbox.
+   */
   children?: ReactNode
+  /**
+   * Whether the checkbox is disabled.
+   * @default false
+   */
   isDisabled?: boolean
+  /**
+   * The icon to be displayed when the checkbox is checked.
+   */
   isRequired?: boolean
   isReadOnly?: boolean
   isSelected?: boolean
   isIndeterminate?: boolean
   defaultSelected?: boolean
+  /**
+   * The icon to be displayed when the checkbox is checked.
+   */
   icon?: ReactNode | ((props: CheckboxIconProps) => ReactNode)
+  /**
+   * React aria onChange event.
+   */
   onValueChange?: AriaCheckboxProps['onChange']
+  /**
+   * Classname or List of classes to change the classNames of the element.
+   * if `className` is passed, it will be added to the base slot.
+   *
+   * @example
+   * ```ts
+   * <Checkbox classNames={{
+   *    base:"base-classes",
+   *    wrapper: "wrapper-classes",
+   *    icon: "icon-classes",
+   *    label: "label-classes",
+   * }} />
+   * ```
+   */
   classNames?: SlotsToClasses<CheckboxSlots>
   className?: string
 }

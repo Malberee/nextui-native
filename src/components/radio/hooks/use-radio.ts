@@ -23,9 +23,34 @@ import { View } from 'react-native'
 import { useRadioGroupContext } from '../radio-group-context'
 
 interface Props extends RNNextUIProps {
+  /**
+   * Ref to the React Native component.
+   */
   ref?: Ref<View>
+  /**
+   * The label of the checkbox.
+   */
   children?: ReactNode
+  /**
+   * The radio description text.
+   */
   description?: string
+  /**
+   * Classname or List of classes to change the classNames of the element.
+   * if `className` is passed, it will be added to the base slot.
+   *
+   * @example
+   * ```ts
+   * <Radio classNames={{
+   *    base:"base-classes",
+   *    wrapper: "wrapper-classes",
+   *    control: "control-classes", // inner circle
+   *    labelWrapper: "label-wrapper-classes", // this wraps the label and description
+   *    label: "label-classes",
+   *    description: "description-classes",
+   * }} />
+   * ```
+   */
   classNames?: SlotsToClasses<RadioSlots>
   className?: string
 }

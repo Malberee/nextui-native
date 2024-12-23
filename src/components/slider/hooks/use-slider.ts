@@ -35,20 +35,83 @@ export type SliderStepMark = {
 export type SliderRenderThumbProps = ViewProps & { index?: number }
 
 interface Props extends RNNextUIProps {
+  /**
+   * Ref to the React Native component.
+   */
   ref?: ReactRef<View | null>
+  /**
+   * The content to display as the label.
+   */
   label?: ReactNode
+  /**
+   * The input name.
+   */
   name?: string
+  /**
+   * The offset from which to start the fill.
+   */
   fillOffset?: number
+  /**
+   * The display format of the value label.
+   */
   formatOptions?: Intl.NumberFormatOptions
+  /**
+   * Whether to show the step indicators.
+   * @default false
+   */
   showSteps?: boolean
+  /**
+   * Custom steps labels.
+   * @example [{value: 0, label: "0"}, {value: 50, label: "50"}, {value: 100, label: "100"}]
+   * @default []
+   */
   marks?: SliderStepMark[]
+  /**
+   * Element to be rendered in the start side of the slider.
+   */
   startContent?: ReactNode
+  /**
+   * Element to be rendered in the end side of the slider.
+   */
   endContent?: ReactNode
+  /**
+   * Classname or List of classes to change the classNames of the element.
+   * if `className` is passed, it will be added to the base slot.
+   *
+   * @example
+   * ```ts
+   * <Slider classNames={{
+   *    base:"base-classes",
+   *    step: "step-classes",
+   *    labelWrapper: "label-wrapper-classes",
+   *    label: "label-classes",
+   *    value: "value-classes",
+   *    trackWrapper: "track-wrapper-classes",
+   *    track: "track-classes",
+   *    filler: "filler-classes",
+   *    thumb: "thumb-classes",
+   *    mark: "mark-classes",
+   * }} />
+   * ```
+   */
   classNames?: SlotsToClasses<SliderSlots>
   className?: string
+  /**
+   * A function that returns the content to display as the value label.
+   * Overrides default formatted number.
+   */
   getValue?: (value: SliderValue) => string
+  /**
+   * Function to render the label.
+   */
   renderLabel?: (props: ViewProps) => ReactNode
+  /**
+   * Function to render the value label.
+   */
   renderValue?: (props: ViewProps) => ReactNode
+  /**
+   * Function to render the thumb. It can be used to add a tooltip or custom icon.
+   */
   renderThumb?: (props: SliderRenderThumbProps) => ReactNode
 }
 

@@ -26,9 +26,36 @@ import type { View } from 'react-native'
 import { useProgressBar as useAriaProgress } from './use-progress-bar'
 
 export interface Props extends RNNextUIProps {
+  /**
+   * Ref to the React Native component.
+   */
   ref?: ReactRef<View | null>
+  /**
+   * The stroke of the circle and tracker
+   * @default 2
+   */
   strokeWidth?: number
+  /**
+   * Whether to show the value label.
+   * @default false
+   */
   showValueLabel?: boolean
+  /**
+   * Classname or List of classes to change the classNames of the element.
+   * if `className` is passed, it will be added to the base slot.
+   *
+   * @example
+   * ```ts
+   * <CircularProgress classNames={{
+   *    base:"base-classes",
+   *    label: "label-classes",
+   *    value: "value-classes",
+   *    svg: "svg-classes", // the svg wrapper
+   *    track: "track-classes", // the circle of the background
+   *    indicator: "indicator-classes", // the circle of the progress
+   * }} />
+   * ```
+   */
   classNames?: SlotsToClasses<CircularProgressSlots>
   className?: string
 }
