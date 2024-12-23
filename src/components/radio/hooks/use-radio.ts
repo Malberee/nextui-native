@@ -109,10 +109,9 @@ export const useRadio = (props: UseRadioProps) => {
         size,
         isInvalid,
         isDisabled,
-        isSelected,
         disableAnimation,
       }),
-    [color, size, isInvalid, isDisabled, isSelected, disableAnimation]
+    [color, size, isInvalid, isDisabled, disableAnimation]
   )
 
   const baseStyles = clsx(classNames?.base, className)
@@ -122,9 +121,10 @@ export const useRadio = (props: UseRadioProps) => {
       ...props,
       ref: mergeRefs(inputRef, ref),
       className: slots.base({ class: baseStyles }),
+      selected: isSelected,
       ...mergeProps(props, inputProps, otherProps),
     }),
-    [slots, baseStyles, inputRef, otherProps]
+    [slots, baseStyles, inputRef, otherProps, isSelected]
   )
 
   const getWrapperProps: PropGetter = useCallback(

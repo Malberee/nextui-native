@@ -11,11 +11,21 @@ const radio = tv({
       'justify-center',
       'border-solid',
       'border-medium',
+      'border-default',
       'rounded-full',
       'scale-100',
     ],
     labelWrapper: 'ml-1 flex flex-col',
-    control: ['z-10', 'w-2', 'h-2', 'opacity-0', 'scale-0', 'rounded-full'],
+    control: [
+      'z-10',
+      'w-2',
+      'h-2',
+      'opacity-0',
+      'scale-0',
+      'rounded-full',
+      'group-[[selected=true]]:opacity-100',
+      'group-[[selected=true]]:scale-100',
+    ],
     label: 'text-foreground',
     description: 'text-foreground-400',
   },
@@ -23,27 +33,27 @@ const radio = tv({
     color: {
       default: {
         control: 'bg-default-500 text-default-foreground',
-        wrapper: 'border-default-500',
+        wrapper: 'group-[[selected=true]]:border-default-500',
       },
       primary: {
         control: 'bg-primary text-primary-foreground',
-        wrapper: 'border-primary',
+        wrapper: 'group-[[selected=true]]:border-primary',
       },
       secondary: {
         control: 'bg-secondary text-secondary-foreground',
-        wrapper: 'border-secondary',
+        wrapper: 'group-[[selected=true]]:border-secondary',
       },
       success: {
         control: 'bg-success text-success-foreground',
-        wrapper: 'border-success',
+        wrapper: 'group-[[selected=true]]:border-success',
       },
       warning: {
         control: 'bg-warning text-warning-foreground',
-        wrapper: 'border-warning',
+        wrapper: 'group-[[selected=true]]:border-warning',
       },
       danger: {
         control: 'bg-danger text-danger-foreground',
-        wrapper: 'border-danger',
+        wrapper: 'group-[[selected=true]]:border-danger',
       },
     },
     size: {
@@ -77,7 +87,7 @@ const radio = tv({
     isInvalid: {
       true: {
         control: 'bg-danger text-danger-foreground',
-        wrapper: '!border-danger',
+        wrapper: 'border-danger group-[[selected=true]]:border-danger',
         label: 'text-danger',
         description: 'text-danger-300',
       },
@@ -91,14 +101,6 @@ const radio = tv({
           'duration-250 transition-all ease-in-out motion-reduce:transition-none',
         label: 'transition-colors motion-reduce:transition-none',
         description: 'transition-colors motion-reduce:transition-none',
-      },
-    },
-    isSelected: {
-      true: {
-        control: 'scale-100 opacity-100',
-      },
-      false: {
-        wrapper: 'border-default',
       },
     },
   },
