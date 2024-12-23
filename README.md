@@ -30,6 +30,16 @@ npm install @malberee/nextui-native
 yarn add @malberee/nextui-native
 ```
 
+#### To use checkboxes, spinner or icons, also install react-native-svg 
+
+```sh
+# npm
+npm install react-native-svg
+
+# yarn
+yarn add react-native-svg
+```
+
 #### Modify your tailwind.config.js
 
 ```diff
