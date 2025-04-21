@@ -17,8 +17,6 @@ const Radio = forwardRef<View, RadioProps>((props, ref) => {
     getDescriptionProps,
   } = useRadio({ ...props, ref })
 
-  console.log(getWrapperProps())
-
   return (
     <Pressable {...getBaseProps()}>
       <View {...getWrapperProps()}>

@@ -15,7 +15,7 @@ const SliderThumb = forwardRef<View, SliderThumbProps>((props, ref) => {
   const thumbProps = {
     ...getThumbProps(),
     index,
-    children: <View className="absolute size-11 bg-transparent" />,
+    children: <View className="absolute size-12 bg-transparent" />,
   }
 
   const content = renderFn({
@@ -25,12 +25,6 @@ const SliderThumb = forwardRef<View, SliderThumbProps>((props, ref) => {
   }) as React.ReactElement
 
   return content
-
-  // return (
-  //   <View {...getThumbProps()}>
-  //     <View className="absolute size-11 bg-transparent" />
-  //   </View>
-  // )
 })
 
 SliderThumb.displayName = 'NextUI.SliderThumb'

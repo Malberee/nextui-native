@@ -58,9 +58,8 @@ interface Props extends RNNextUIProps {
    */
   spinnerPlacement?: 'start' | 'end'
   /**
-   * The native button click event handler.
-   * use `onPress` instead.
-   * @deprecated
+   * Whether the button should display a loading spinner.
+   * @default false
    */
   isLoading?: boolean
   classNames?: SlotsToClasses<ButtonSlots>
@@ -69,7 +68,7 @@ interface Props extends RNNextUIProps {
 
 export type UseButtonProps = Props &
   Omit<AriaButtonProps, keyof ButtonVariantProps> &
-  Omit<ButtonVariantProps, 'isinGroup'>
+  Omit<ButtonVariantProps, 'isInGroup'>
 
 export const useButton = (props: UseButtonProps) => {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
