@@ -1,4 +1,4 @@
-# nextui-native
+# NextUI Native
 
 I'm just trying to replicate the design and some functionality of [NextUI](https://github.com/heroui-inc/heroui) for React Native.
 Many of the components do not have the full functionality of the original NextUI library.
