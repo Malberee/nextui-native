@@ -18,7 +18,7 @@ Here is a list of some of the components that have already been implemented:
 
 ## Installation
 
-Follow the [instructions](https://www.nativewind.dev/getting-started/installation) for installing NativeWind v4
+Follow the [instructions](https://www.nativewind.dev/docs/getting-started/installation) for installing NativeWind v4
 
 #### Install nextui-native
 
