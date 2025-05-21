@@ -6,7 +6,7 @@
   "types": "./lib/typescript/src/index.d.ts",
   "exports": {
     ".": {
-      "source": "./src/index.tsx",
+      "source": "./src/index.ts",
       "types": "./lib/typescript/src/index.d.ts",
       "default": "./lib/module/index.js"
     },
@@ -70,6 +70,7 @@
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/jest": "^29.5.5",
     "@types/react": "^19.0.12",
+    "babel-plugin-module-resolver": "^5.0.2",
     "commitlint": "^19.6.1",
     "del-cli": "^5.1.0",
     "eslint": "^9.22.0",

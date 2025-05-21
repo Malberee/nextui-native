@@ -9,4 +9,15 @@ module.exports = {
       presets: ['module:@react-native/babel-preset'],
     },
   ],
+  plugins: [
+    [
+      'module-resolver',
+      {
+        extensions: ['.tsx', '.ts', '.jsx', '.js', '.json'],
+        alias: {
+          '@': './src',
+        },
+      },
+    ],
+  ],
 }

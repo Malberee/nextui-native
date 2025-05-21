@@ -13,6 +13,21 @@ module.exports = function (api) {
         ['babel-preset-expo', { jsxImportSource: 'nativewind' }],
         'nativewind/babel',
       ],
+      overrides: [
+        {
+          plugins: [
+            [
+              'module-resolver',
+              {
+                extensions: ['.tsx', '.ts', '.jsx', '.js', '.json'],
+                alias: {
+                  '@': '../src',
+                },
+              },
+            ],
+          ],
+        },
+      ],
     },
     { root, pkg }
   )
