@@ -1,15 +1,14 @@
-import { Slider } from '@malberee/nextui-native'
-import React from 'react'
-import { StyleSheet, View } from 'react-native'
+import { Text, View, StyleSheet } from 'react-native';
+import { multiply } from '@malberee/nextui-native';
 
-import '../global.css'
+const result = multiply(3, 7);
 
-const App = () => {
+export default function App() {
   return (
-    <View className="bg-background dark px-4" style={styles.container}>
-      <Slider />
+    <View style={styles.container}>
+      <Text>Result: {result}</Text>
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -18,6 +17,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-})
-
-export default App
+});

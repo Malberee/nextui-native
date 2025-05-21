@@ -1,19 +1,18 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "rootDir": ".",
     "paths": {
-      "@malberee/nextui-native": ["./src/index"],
-      "@/*": ["./src/*"]
+      "@malberee/nextui-native": ["./src/index"]
     },
-    "outDir": "./lib/typescript",
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "jsx": "react",
-    "lib": ["esnext"],
-    "module": "esnext",
-    "moduleResolution": "node",
+    "jsx": "react-jsx",
+    "lib": ["ESNext"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "noEmit": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
     "noImplicitUseStrict": false,
@@ -24,7 +23,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "esnext",
+    "target": "ESNext",
     "verbatimModuleSyntax": true
   }
 }
