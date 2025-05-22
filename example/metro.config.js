@@ -19,4 +19,6 @@ const config = withMetroConfig(getDefaultConfig(__dirname), {
 config.resolver.unstable_enablePackageExports = true
 config.resolver.disableHierarchicalLookup = true
 
-module.exports = withNativeWind(config, { input: './global.css' })
+module.exports = withNativeWind(config, {
+  input: './global.css',
+})

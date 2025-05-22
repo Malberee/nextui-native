@@ -9,12 +9,12 @@ module.exports = function (api) {
 
   return getConfig(
     {
-      presets: [
-        ['babel-preset-expo', { jsxImportSource: 'nativewind' }],
-        'nativewind/babel',
-      ],
       overrides: [
         {
+          presets: [
+            ['babel-preset-expo', { jsxImportSource: 'nativewind' }],
+            'nativewind/babel',
+          ],
           plugins: [
             [
               'module-resolver',
