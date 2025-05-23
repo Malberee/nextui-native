@@ -1,5 +1,5 @@
 const path = require('path')
-const { getConfig } = require('react-native-builder-bob/babel-config')
+const { getConfig } = require('./babel-config')
 const pkg = require('../package.json')
 
 const root = path.resolve(__dirname, '..')
@@ -9,24 +9,20 @@ module.exports = function (api) {
 
   return getConfig(
     {
-      overrides: [
-        {
-          presets: [
-            ['babel-preset-expo', { jsxImportSource: 'nativewind' }],
-            'nativewind/babel',
-          ],
-          plugins: [
-            [
-              'module-resolver',
-              {
-                extensions: ['.tsx', '.ts', '.jsx', '.js', '.json'],
-                alias: {
-                  '@': '../src',
-                },
-              },
-            ],
-          ],
-        },
+      presets: [
+        ['babel-preset-expo', { jsxImportSource: 'nativewind' }],
+        'nativewind/babel',
+      ],
+      plugins: [
+        [
+          'module-resolver',
+          {
+            extensions: ['.tsx', '.ts', '.jsx', '.js', '.json'],
+            alias: {
+              '@': '../src',
+            },
+          },
+        ],
       ],
     },
     { root, pkg }
