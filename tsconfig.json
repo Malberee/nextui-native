@@ -5,6 +5,7 @@
       "@malberee/nextui-native": ["./src/index"],
       "@/*": ["./src/*"]
     },
+    "outDir": "./lib/typescript",
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "esModuleInterop": true,
