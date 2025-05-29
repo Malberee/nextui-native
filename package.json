@@ -4,6 +4,7 @@
   "description": "HeroUI for React Native",
   "main": "./lib/module/index.js",
   "types": "./lib/module/index.d.ts",
+  "source": "./src/index.ts",
   "exports": {
     ".": {
       "source": "./src/index.ts",
