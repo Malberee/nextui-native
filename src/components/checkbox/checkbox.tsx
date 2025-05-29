@@ -1,5 +1,5 @@
 import { cssInterop } from 'nativewind'
-import React, { type ReactElement, cloneElement, forwardRef } from 'react'
+import { type ReactElement, cloneElement, forwardRef } from 'react'
 import { Pressable, Text, View } from 'react-native'
 
 import { CheckboxIcon } from './checkbox-icon'

@@ -1,5 +1,5 @@
 import { cssInterop } from 'nativewind'
-import React, { forwardRef } from 'react'
+import { forwardRef } from 'react'
 import { Text, View } from 'react-native'
 import Svg, { Circle, type SvgProps } from 'react-native-svg'
 

@@ -1,4 +1,3 @@
-import React from 'react'
 import Svg, { Path, Polyline } from 'react-native-svg'
 
 import type { IconSvgProps } from './types'

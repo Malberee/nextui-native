@@ -1,4 +1,3 @@
-import React from 'react'
 import Svg, { Path } from 'react-native-svg'
 
 import type { IconSvgProps } from './types'
@@ -13,7 +12,6 @@ export const CloseIcon = (
     'className'?: string
   }
 ) => {
-  /* eslint-disable @typescript-eslint/no-unused-vars */
   // avoid passing non-DOM attributes to svg
   const { isSelected, isIndeterminate, disableAnimation, ...otherProps } = props
 

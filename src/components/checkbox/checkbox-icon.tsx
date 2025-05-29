@@ -1,4 +1,3 @@
-import React from 'react'
 import Animated, {
   useAnimatedProps,
   withDelay,
@@ -49,7 +48,6 @@ const CheckIcon = (props: Omit<CheckboxIconProps, 'isIndeterminate'>) => {
 const IndeterminateIcon = (
   props: Omit<CheckboxIconProps, 'isIndeterminate'>
 ) => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { isSelected, disableAnimation, ...otherProps } = props
 
   return (

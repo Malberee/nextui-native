@@ -1,27 +1,31 @@
 const path = require('path')
-const pak = require('../package.json')
+const { getConfig } = require('./babel-config')
+const pkg = require('../package.json')
+
+const root = path.resolve(__dirname, '..')
 
 module.exports = function (api) {
   api.cache(true)
 
-  return {
-    presets: [
-      ['babel-preset-expo', { jsxImportSource: 'nativewind' }],
-      'nativewind/babel',
-    ],
-    plugins: [
-      [
-        'module-resolver',
-        {
-          extensions: ['.tsx', '.ts', '.js', '.json'],
-          alias: {
-            // For development, we want to alias the library to the source
-            [pak.name]: path.join(__dirname, '..', pak.source),
-            '@': path.join(__dirname, '../src'),
-          },
-        },
+  return getConfig(
+    {
+      presets: [
+        ['babel-preset-expo', { jsxImportSource: 'nativewind' }],
+        'nativewind/babel',
       ],
-      'react-native-reanimated/plugin',
-    ],
-  }
+      plugins: [
+        [
+          'module-resolver',
+          {
+            extensions: ['.tsx', '.ts', '.jsx', '.js', '.json'],
+            alias: {
+              '@': '../src',
+            },
+          },
+        ],
+        'react-native-reanimated/plugin',
+      ],
+    },
+    { root, pkg }
+  )
 }

@@ -1,5 +1,5 @@
 import { rem } from 'nativewind'
-import React, { type FC } from 'react'
+import { type FC } from 'react'
 import { View } from 'react-native'
 
 interface StripesProps {

@@ -1,4 +1,4 @@
-import React, { forwardRef, useMemo } from 'react'
+import { forwardRef, useMemo } from 'react'
 import { Text, View } from 'react-native'
 
 import { CheckboxGroupProvider } from './checkbox-group-context'

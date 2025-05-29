@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import { forwardRef } from 'react'
 import { ImageBackground, Text, View } from 'react-native'
 import Animated from 'react-native-reanimated'
 

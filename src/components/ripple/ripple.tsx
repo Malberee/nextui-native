@@ -1,5 +1,5 @@
 import type { RNNextUIProps } from '@/core/system-rsc'
-import React, { type FC, type Key } from 'react'
+import { type FC, type Key } from 'react'
 
 import type { RippleType } from './hooks'
 import RippleItem from './ripple-item'

@@ -1,5 +1,5 @@
 import { renderFn } from '@/utilities'
-import React, { forwardRef } from 'react'
+import { forwardRef } from 'react'
 import { Text, View } from 'react-native'
 
 import { type UseSliderProps, useSlider } from './hooks'

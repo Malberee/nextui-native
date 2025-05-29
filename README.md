@@ -16,6 +16,8 @@ Here is a list of some of the components that have already been implemented:
 - [x] Spinner
 - [x] Switch
 
+Since I created the library for my own needs, I did not create any documentation, so feel free to ask any questions in [issues](https://github.com/Malberee/nextui-native/issues).
+
 ## Installation
 
 Follow the [instructions](https://www.nativewind.dev/docs/getting-started/installation) for installing NativeWind v4

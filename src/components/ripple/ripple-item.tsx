@@ -1,4 +1,4 @@
-import React, { type FC, type Key } from 'react'
+import { type FC, type Key } from 'react'
 import Animated from 'react-native-reanimated'
 
 import type { RippleType } from './hooks'

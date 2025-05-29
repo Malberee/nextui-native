@@ -1,6 +1,6 @@
 import { CloseFilledIcon } from '@/utilities/shared-icons'
 import { cssInterop } from 'nativewind'
-import React, { forwardRef, useMemo } from 'react'
+import { forwardRef, useMemo } from 'react'
 import { Pressable, Text, TextInput, View } from 'react-native'
 
 import { type UseInputProps, useInput } from './hooks/use-input'
