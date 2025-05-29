@@ -26,7 +26,8 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "clean": "del-cli lib",
-    "prepare": "tsc --project tsconfig-esm.build.json && tsc --project tsconfig-cjs.build.json",
+    "prepare": "tsc --project tsconfig-esm.build.json && tsc --project tsconfig-cjs.build.json && yarn prepare:aliases",
+    "prepare:aliases": "tsc-alias -p tsconfig-esm.build.json && tsc-alias -p tsconfig-cjs.build.json",
     "release": "release-it --only-version"
   },
   "keywords": [
