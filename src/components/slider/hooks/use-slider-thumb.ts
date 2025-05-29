@@ -1,4 +1,4 @@
-import type { PropGetter, RNNextUIProps } from '@/core/system-rsc'
+import type { PropGetter, RNHeroUIProps } from '@/core/system-rsc'
 import type { SliderVariantProps } from '@/core/theme'
 import { type ReactRef } from '@/utilities'
 import type { AriaSliderThumbProps } from '@react-aria/slider'
@@ -10,7 +10,7 @@ import { type View } from 'react-native'
 
 import type { UseSliderProps } from './use-slider'
 
-interface Props extends RNNextUIProps {
+interface Props extends RNHeroUIProps {
   /**
    * Ref to the React Native component.
    */

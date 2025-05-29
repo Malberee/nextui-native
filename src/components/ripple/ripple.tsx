@@ -1,10 +1,10 @@
-import type { RNNextUIProps } from '@/core/system-rsc'
+import type { RNHeroUIProps } from '@/core/system-rsc'
 import { type FC, type Key } from 'react'
 
 import type { RippleType } from './hooks'
 import RippleItem from './ripple-item'
 
-export interface RippleProps extends RNNextUIProps {
+export interface RippleProps extends RNHeroUIProps {
   ripples: RippleType[]
   color: string
   onClear: (key: Key) => void
@@ -25,6 +25,6 @@ const Ripple: FC<RippleProps> = ({ ripples, color = 'white', onClear }) => {
   )
 }
 
-Ripple.displayName = 'NextUI.Ripple'
+Ripple.displayName = 'HeroUI.Ripple'
 
 export default Ripple

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "paths": {
-      "@malberee/nextui-native": ["./src/index"],
+      "@malberee/heroui-native": ["./src/index"],
       "@/*": ["./src/*"]
     },
     "allowUnreachableCode": false,

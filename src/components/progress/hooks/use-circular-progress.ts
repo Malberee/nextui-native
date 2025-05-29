@@ -1,7 +1,7 @@
 import { useProviderContext } from '@/core'
 import {
   type PropGetter,
-  type RNNextUIProps,
+  type RNHeroUIProps,
   mapPropsVariants,
 } from '@/core/system-rsc'
 import { type SlotsToClasses } from '@/core/theme'
@@ -25,7 +25,7 @@ import type { View } from 'react-native'
 
 import { useProgressBar as useAriaProgress } from './use-progress-bar'
 
-export interface Props extends RNNextUIProps {
+export interface Props extends RNHeroUIProps {
   /**
    * Ref to the React Native component.
    */

@@ -47,6 +47,6 @@ const Checkbox = forwardRef<View, CheckboxProps>((props, ref) => {
   )
 })
 
-Checkbox.displayName = 'NextUI.Checkbox'
+Checkbox.displayName = 'HeroUI.Checkbox'
 
 export default Checkbox

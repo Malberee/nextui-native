@@ -1,4 +1,4 @@
-import { type RNNextUIProps, mapPropsVariants } from '@/core/system-rsc'
+import { type RNHeroUIProps, mapPropsVariants } from '@/core/system-rsc'
 import {
   type SlotsToClasses,
   type SpinnerSlots,
@@ -10,7 +10,7 @@ import clsx from 'clsx'
 import { type Ref, useMemo } from 'react'
 import type { View } from 'react-native'
 
-interface Props extends RNNextUIProps {
+interface Props extends RNHeroUIProps {
   /**
    * Ref to the React Native component.
    */

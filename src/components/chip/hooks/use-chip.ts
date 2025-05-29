@@ -1,4 +1,4 @@
-import { type RNNextUIProps, mapPropsVariants } from '@/core/system-rsc'
+import { type RNHeroUIProps, mapPropsVariants } from '@/core/system-rsc'
 import {
   type ChipSlots,
   type ChipVariantProps,
@@ -10,7 +10,7 @@ import clsx from 'clsx'
 import { type ReactNode, cloneElement, isValidElement, useMemo } from 'react'
 import type { GestureResponderEvent, View } from 'react-native'
 
-export interface UseChipProps extends RNNextUIProps, ChipVariantProps {
+export interface UseChipProps extends RNHeroUIProps, ChipVariantProps {
   /**
    * Ref to the React Native component.
    */

@@ -1,7 +1,7 @@
-# NextUI Native
+# HeroUI Native
 
-I'm just trying to replicate the design and some functionality of [NextUI](https://github.com/heroui-inc/heroui) for React Native.
-Many of the components do not have the full functionality of the original NextUI library.
+I'm just trying to replicate the design and some functionality of [HeroUI](https://github.com/heroui-inc/heroui) for React Native.
+Many of the components do not have the full functionality of the original HeroUI library.
 
 Here is a list of some of the components that have already been implemented:
 
@@ -16,23 +16,23 @@ Here is a list of some of the components that have already been implemented:
 - [x] Spinner
 - [x] Switch
 
-Since I created the library for my own needs, I did not create any documentation, so feel free to ask any questions in [issues](https://github.com/Malberee/nextui-native/issues).
+Since I created the library for my own needs, I did not create any documentation, so feel free to ask any questions in [issues](https://github.com/Malberee/heroui-native/issues).
 
 ## Installation
 
 Follow the [instructions](https://www.nativewind.dev/docs/getting-started/installation) for installing NativeWind v4
 
-#### Install nextui-native
+#### Install @malberee/heroui-native
 
 ```sh
 # npm
-npm install @malberee/nextui-native
+npm install @malberee/heroui-native
 
 # yarn
-yarn add @malberee/nextui-native
+yarn add @malberee/heroui-native
 ```
 
-#### To use checkboxes, spinner or icons, also install react-native-svg 
+#### To use checkboxes, spinner or icons, also install react-native-svg
 
 ```sh
 # npm
@@ -47,31 +47,31 @@ yarn add react-native-svg
 ```diff
 // tailwind.config.js
 
-+ const { nextui } = require("@malberee/nextui-native/plugin")
++ const { heroui } = require("@malberee/heroui-native/plugin")
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./app/**/*.{js,jsx,ts,tsx}",
-+   "node_modules/@malberee/nextui-native/**/*.{js,jsx,ts,tsx}"
++   "node_modules/@malberee/heroui-native/**/*.{js,jsx,ts,tsx}"
   ],
   presets: [require("nativewind/preset")],
   theme: {
     extend: {},
   },
   darkMode: "class",
-+ plugins: [nextui()] ,
++ plugins: [heroui()] ,
 }
 ```
 
 ## Usage
 
 ```js
-import { Button } from '@malberee/nextui-native'
+import { Button } from '@malberee/heroui-native'
 
 // ...
 
-<Button color="success" variant="flat">
+;<Button color="success" variant="flat">
   Button
 </Button>
 ```

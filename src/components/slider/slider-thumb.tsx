@@ -27,6 +27,6 @@ const SliderThumb = forwardRef<View, SliderThumbProps>((props, ref) => {
   return content
 })
 
-SliderThumb.displayName = 'NextUI.SliderThumb'
+SliderThumb.displayName = 'HeroUI.SliderThumb'
 
 export default SliderThumb

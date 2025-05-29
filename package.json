@@ -1,7 +1,7 @@
 {
-  "name": "@malberee/nextui-native",
+  "name": "@malberee/heroui-native",
   "version": "1.1.10",
-  "description": "NextUI for React Native",
+  "description": "HeroUI for React Native",
   "main": "./lib/module/index.js",
   "types": "./lib/module/index.d.ts",
   "exports": {
@@ -21,7 +21,7 @@
     "lib"
   ],
   "scripts": {
-    "example": "yarn workspace @malberee/nextui-native-example",
+    "example": "yarn workspace @malberee/heroui-native-example",
     "test": "jest",
     "typecheck": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
@@ -39,14 +39,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Malberee/nextui-native.git"
+    "url": "git+https://github.com/Malberee/heroui-native.git"
   },
   "author": "Malberee <pavellyalkov45@gmail.com> (https://github.com/Malberee)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Malberee/nextui-native/issues"
+    "url": "https://github.com/Malberee/heroui-native/issues"
   },
-  "homepage": "https://github.com/Malberee/nextui-native#readme",
+  "homepage": "https://github.com/Malberee/heroui-native#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },

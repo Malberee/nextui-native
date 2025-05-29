@@ -60,6 +60,6 @@ const CircularProgress = forwardRef<View, CircularProgressProps>(
   }
 )
 
-CircularProgress.displayName = 'NextUI.CircularProgress'
+CircularProgress.displayName = 'HeroUI.CircularProgress'
 
 export default CircularProgress

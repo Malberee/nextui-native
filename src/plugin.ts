@@ -1,1 +1,1 @@
-export { nextui } from './core/theme/plugin'
+export { heroui } from './core/theme/plugin'

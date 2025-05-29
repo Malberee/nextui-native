@@ -1,7 +1,7 @@
 import { useProviderContext } from '@/core'
 import {
   type PropGetter,
-  type RNNextUIProps,
+  type RNHeroUIProps,
   mapPropsVariants,
 } from '@/core/system-rsc'
 import {
@@ -26,7 +26,7 @@ import { Dimensions, type LayoutChangeEvent, type View } from 'react-native'
 import { useIndeterminateAnimation } from './use-indeterminate-animation'
 import { useProgressBar as useAriaProgress } from './use-progress-bar'
 
-interface Props extends RNNextUIProps {
+interface Props extends RNHeroUIProps {
   /**
    * Ref to the React Native component.
    */

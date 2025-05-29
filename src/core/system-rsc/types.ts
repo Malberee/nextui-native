@@ -8,7 +8,7 @@ export type PropGetter<P = Record<string, unknown>, R = ViewProps> = (
 
 type PropsOf<T extends ComponentType<any>> = React.ComponentPropsWithoutRef<T>
 
-export type RNNextUIProps<
+export type RNHeroUIProps<
   T extends ComponentType<any> = typeof View,
   OmitKeys extends keyof any = never,
 > = Omit<

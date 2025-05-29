@@ -1,7 +1,7 @@
 import { useRipple } from '@/components/ripple'
 import type { SpinnerProps } from '@/components/spinner'
 import { useProviderContext } from '@/core'
-import type { PropGetter, RNNextUIProps } from '@/core/system-rsc'
+import type { PropGetter, RNHeroUIProps } from '@/core/system-rsc'
 import {
   type ButtonSlots,
   type ButtonVariantProps,
@@ -28,7 +28,7 @@ import type { LayoutChangeEvent, View } from 'react-native'
 
 import { useButtonGroupContext } from '../button-group-context'
 
-interface Props extends RNNextUIProps {
+interface Props extends RNHeroUIProps {
   /**
    * Ref to the React Native component.
    */
@@ -44,7 +44,7 @@ interface Props extends RNNextUIProps {
   startContent?: ReactNode
   /**
    * Spinner to display when loading.
-   * @see https://nextui.org/components/spinner
+   * @see https://www.heroui.com/docs/components/spinner
    */
   endContent?: ReactNode
   /**

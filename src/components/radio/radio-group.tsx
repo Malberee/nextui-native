@@ -40,6 +40,6 @@ const RadioGroup = forwardRef<View, RadioGroupProps>((props, ref) => {
   )
 })
 
-RadioGroup.displayName = 'NextUI.RadioGroup'
+RadioGroup.displayName = 'HeroUI.RadioGroup'
 
 export default RadioGroup

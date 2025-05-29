@@ -2754,9 +2754,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@malberee/nextui-native-example@workspace:example":
+"@malberee/heroui-native-example@workspace:example":
   version: 0.0.0-use.local
-  resolution: "@malberee/nextui-native-example@workspace:example"
+  resolution: "@malberee/heroui-native-example@workspace:example"
   dependencies:
     "@babel/core": ^7.20.0
     "@expo/metro-runtime": ~5.0.4
@@ -2777,9 +2777,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@malberee/nextui-native@workspace:.":
+"@malberee/heroui-native@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@malberee/nextui-native@workspace:."
+  resolution: "@malberee/heroui-native@workspace:."
   dependencies:
     "@commitlint/config-conventional": ^19.6.0
     "@eslint/compat": ^1.2.7

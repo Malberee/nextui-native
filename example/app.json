@@ -14,7 +14,7 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "malberee.nextuinative.example"
+      "bundleIdentifier": "malberee.herouinative.example"
     },
     "android": {
       "adaptiveIcon": {
@@ -22,7 +22,7 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "package": "malberee.nextuinative.example"
+      "package": "malberee.herouinative.example"
     },
     "web": {
       "favicon": "./assets/favicon.png",

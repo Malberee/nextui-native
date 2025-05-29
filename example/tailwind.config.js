@@ -1,4 +1,4 @@
-const { nextui } = require('../src/plugin')
+const { heroui } = require('../src/plugin')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -8,6 +8,6 @@ module.exports = {
   theme: {
     extend: {},
   },
-  darkMode: 'class',
-  plugins: [nextui()],
+  darkMode: 'cherouilass',
+  plugins: [heroui()],
 }

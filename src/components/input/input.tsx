@@ -126,6 +126,6 @@ const Input = forwardRef<TextInput, InputProps>((props, ref) => {
   )
 })
 
-Input.displayName = 'NextUI.Input'
+Input.displayName = 'HeroUI.Input'
 
 export default Input

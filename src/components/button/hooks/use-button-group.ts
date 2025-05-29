@@ -1,7 +1,7 @@
 import { useProviderContext } from '@/core'
 import {
   type PropGetter,
-  type RNNextUIProps,
+  type RNHeroUIProps,
   mapPropsVariants,
 } from '@/core/system-rsc'
 import { type ButtonGroupVariantProps, buttonGroup } from '@/core/theme'
@@ -11,7 +11,7 @@ import type { View } from 'react-native'
 
 import type { ButtonProps } from '../index'
 
-interface Props extends RNNextUIProps, ButtonGroupVariantProps {
+interface Props extends RNHeroUIProps, ButtonGroupVariantProps {
   /**
    * Ref to the React Native component.
    */

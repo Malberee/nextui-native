@@ -30,6 +30,6 @@ const Radio = forwardRef<View, RadioProps>((props, ref) => {
   )
 })
 
-Radio.displayName = 'NextUI.Radio'
+Radio.displayName = 'HeroUI.Radio'
 
 export default Radio

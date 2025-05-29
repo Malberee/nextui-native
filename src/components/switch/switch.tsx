@@ -45,6 +45,6 @@ const Switch = forwardRef<View, SwitchProps>((props, ref) => {
   )
 })
 
-Switch.displayName = 'NextUI.Switch'
+Switch.displayName = 'HeroUI.Switch'
 
 export default Switch

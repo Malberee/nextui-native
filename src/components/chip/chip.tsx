@@ -68,6 +68,6 @@ const Chip = forwardRef<View, ChipProps>((props, ref) => {
   )
 })
 
-Chip.displayName = 'NextUI.Chip'
+Chip.displayName = 'HeroUI.Chip'
 
 export default Chip
