@@ -50,7 +50,8 @@
   },
   "homepage": "https://github.com/Malberee/heroui-native#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "dependencies": {
     "@react-aria/label": "^3.7.18",
