@@ -1,7 +1,6 @@
 # HeroUI Native
 
 I'm just trying to replicate the design and some functionality of [HeroUI](https://github.com/heroui-inc/heroui) for React Native.
-Many of the components do not have the full functionality of the original HeroUI library.
 
 Here is a list of some of the components that have already been implemented:
 
