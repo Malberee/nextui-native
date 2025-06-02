@@ -59,18 +59,18 @@ module.exports = {
     extend: {},
   },
   darkMode: "class",
-+ plugins: [heroui()] ,
++ plugins: [heroui()],
 }
 ```
 
 ## Usage
 
 ```js
-import { Button } from '@malberee/heroui-native'
+import { Button } from '@malberee/heroui-native';
 
 // ...
 
-;<Button color="success" variant="flat">
+<Button color="success" variant="flat">
   Button
 </Button>
 ```
