@@ -20,8 +20,13 @@ import {
 import { mergeProps } from '@react-aria/utils'
 import type { AriaProgressBarProps } from '@react-types/progress'
 import clsx from 'clsx'
-import { useCallback, useMemo } from 'react'
-import type { View } from 'react-native'
+import { useCallback, useEffect, useMemo } from 'react'
+import { type View } from 'react-native'
+import {
+  useAnimatedProps,
+  useSharedValue,
+  withTiming,
+} from 'react-native-reanimated'
 
 import { useProgressBar as useAriaProgress } from './use-progress-bar'
 
@@ -143,7 +148,14 @@ export const useCircularProgress = (
       : 0
   }, [selfMounted, value, minValue, maxValue, isIndeterminate])
 
-  const offset = circumference - percentage * circumference
+  // const offset = circumference - percentage * circumference
+  const offset = useSharedValue(circumference - percentage * circumference)
+
+  useEffect(() => {
+    offset.value = withTiming(circumference - percentage * circumference, {
+      duration: 500,
+    })
+  }, [circumference, percentage])
 
   const getProgressBarProps = useCallback<PropGetter>(
     (props = {}) => ({
@@ -182,6 +194,10 @@ export const useCircularProgress = (
     [strokeWidth, slots, classNames]
   )
 
+  const animatedIndicatorProps = useAnimatedProps(() => ({
+    strokeDashoffset: offset.value,
+  }))
+
   const getIndicatorProps = useCallback<PropGetter>(
     (props = {}) => ({
       cx: center,
@@ -189,14 +205,14 @@ export const useCircularProgress = (
       r: radius,
       role: 'presentation',
       strokeDasharray: `${circumference} ${circumference}`,
-      strokeDashoffset: offset,
       transform: 'rotate(-90 16 16)',
       strokeLinecap: 'round',
       stroke: 'currentColor',
       className: slots.indicator({ class: classNames?.indicator }),
+      animatedProps: animatedIndicatorProps,
       ...props,
     }),
-    [slots, classNames, offset, circumference, radius]
+    [slots, classNames, offset.value, circumference, radius]
   )
 
   const getTrackProps = useCallback<PropGetter>(

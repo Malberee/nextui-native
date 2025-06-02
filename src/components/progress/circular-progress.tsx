@@ -1,6 +1,7 @@
 import { cssInterop } from 'nativewind'
 import { forwardRef } from 'react'
 import { Text, View } from 'react-native'
+import Animated from 'react-native-reanimated'
 import Svg, { Circle, type SvgProps } from 'react-native-svg'
 
 import {
@@ -22,6 +23,8 @@ cssInterop(Circle, {
     },
   },
 })
+
+const AnimatedCircle = Animated.createAnimatedComponent(Circle)
 
 export interface CircularProgressProps extends UseCircularProgressProps {}
 
@@ -46,7 +49,7 @@ const CircularProgress = forwardRef<View, CircularProgressProps>(
         <View className={slots.svgWrapper({ class: classNames?.svgWrapper })}>
           <Svg {...(getSvgProps() as SvgProps)}>
             <Circle {...getTrackProps()} />
-            <Circle {...getIndicatorProps()} />
+            <AnimatedCircle {...getIndicatorProps()} />
           </Svg>
           {showValueLabel && (
             <Text className={slots.value({ class: classNames?.value })}>
