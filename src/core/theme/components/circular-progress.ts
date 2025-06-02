@@ -8,7 +8,7 @@ const circularProgress = tv({
     label: 'text-foreground',
     svgWrapper: 'relative flex flex-row items-center justify-center',
     svg: 'relative z-0 overflow-hidden',
-    track: 'stroke-default-300/50 h-full',
+    track: 'text-default-300/50 h-full',
     indicator: 'h-full',
     value: 'text-foreground absolute font-normal',
   },

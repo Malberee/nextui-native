@@ -18,7 +18,7 @@ cssInterop(Circle, {
   className: {
     target: false,
     nativeStyleToProp: {
-      stroke: true,
+      color: 'stroke',
     },
   },
 })
