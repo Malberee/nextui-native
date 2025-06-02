@@ -26,7 +26,7 @@ const input = tv({
     ],
     innerWrapper: 'box-border h-full grow flex-row items-center',
     input: [
-      'placeholder:text-foreground-500 h-[theme(lineHeight.small)] grow bg-transparent',
+      'placeholder:text-foreground-500 h-[theme(lineHeight.small)] grow bg-transparent py-0',
       'group-[[has-start-content=true]]:pl-1.5',
       'group-[[has-end-content=true]]:pr-1.5',
     ],

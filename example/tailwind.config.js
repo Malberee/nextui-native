@@ -8,6 +8,6 @@ module.exports = {
   theme: {
     extend: {},
   },
-  darkMode: 'cherouilass',
+  darkMode: 'class',
   plugins: [heroui()],
 }
