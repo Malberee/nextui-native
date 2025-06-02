@@ -35,15 +35,15 @@ const button = tv({
     },
     size: {
       sm: {
-        base: 'h-8 min-w-16 gap-2 px-3',
+        base: 'rounded-small h-8 min-w-16 gap-2 px-3',
         content: 'text-tiny',
       },
       md: {
-        base: 'h-10 min-w-20 gap-2 px-4',
+        base: 'rounded-medium h-10 min-w-20 gap-2 px-4',
         content: 'text-small',
       },
       lg: {
-        base: 'h-12 min-w-24 gap-3 px-6',
+        base: 'rounded-large h-12 min-w-24 gap-3 px-6',
         content: 'text-medium',
       },
     },

@@ -74,7 +74,7 @@
     "lodash.kebabcase": "^4.1.1",
     "lodash.mapkeys": "^4.6.0",
     "lodash.omit": "^4.5.0",
-    "tailwind-merge": "^3.3.0",
+    "tailwind-merge": "2.5.4",
     "tailwind-variants": "^1.0.0"
   },
   "devDependencies": {

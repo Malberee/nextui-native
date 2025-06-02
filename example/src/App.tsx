@@ -1,4 +1,4 @@
-import { Button } from '@malberee/heroui-native'
+import { Button, Radio, RadioGroup } from '@malberee/heroui-native'
 import { StyleSheet, View } from 'react-native'
 
 import '../global.css'
@@ -6,7 +6,12 @@ import '../global.css'
 export default function App() {
   return (
     <View style={styles.container}>
-      <Button>Button</Button>
+      <Button radius="full">Button</Button>
+      <RadioGroup>
+        <Radio value="1">1</Radio>
+        <Radio value="2">2</Radio>
+        <Radio value="3">3</Radio>
+      </RadioGroup>
     </View>
   )
 }
