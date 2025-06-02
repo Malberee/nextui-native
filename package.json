@@ -1,6 +1,6 @@
 {
   "name": "@malberee/heroui-native",
-  "version": "1.1.11",
+  "version": "1.1.12",
   "description": "HeroUI for React Native",
   "main": "./lib/module/index.js",
   "types": "./lib/module/index.d.ts",
