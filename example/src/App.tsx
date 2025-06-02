@@ -1,4 +1,4 @@
-import { CircularProgress } from '@malberee/heroui-native'
+import { Spinner } from '@malberee/heroui-native'
 import { StyleSheet, View } from 'react-native'
 
 import '../global.css'
@@ -6,7 +6,7 @@ import '../global.css'
 export default function App() {
   return (
     <View style={styles.container}>
-      <CircularProgress />
+      <Spinner size="lg" />
     </View>
   )
 }

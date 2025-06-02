@@ -57,7 +57,7 @@ const Spinner = forwardRef<View, SpinnerProps>((props, ref) => {
                 cy="50%"
                 r={R}
                 stroke="white"
-                strokeWidth={2}
+                strokeWidth={5}
                 strokeDasharray={`${CIRCLE_LENGTH * 0.25} ${CIRCLE_LENGTH * 0.75}`}
               />
             </Mask>
