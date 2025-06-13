@@ -3,7 +3,6 @@
 I'm just trying to replicate the design and some functionality of [HeroUI](https://github.com/heroui-inc/heroui) for React Native.
 
 Here is a list of some of the components that have already been implemented:
-
 - [x] Button
 - [x] Checkbox
 - [x] Chip
@@ -14,6 +13,8 @@ Here is a list of some of the components that have already been implemented:
 - [x] Slider
 - [x] Spinner
 - [x] Switch
+
+[Preview](#preview)
 
 Since I created the library for my own needs, I did not create any documentation, so feel free to ask any questions in [issues](https://github.com/Malberee/heroui-native/issues).
 
@@ -75,6 +76,9 @@ import { Button } from '@malberee/heroui-native';
 </Button>
 ```
 
+## [Preview](#preview)
+![heroui-showcase](https://github.com/user-attachments/assets/e381b842-9b85-44f3-95cb-72362ef5c8d5)
+
 ## License
 
 MIT
@@ -82,3 +86,4 @@ MIT
 ---
 
 Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
+
